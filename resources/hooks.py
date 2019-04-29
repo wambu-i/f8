@@ -25,7 +25,7 @@ def worker_verification():
     else:
         return "Could not get verification tokens."
 
-idx = get_index()
+#idx = get_index()
 
 @bot.route('/', methods = ['POST'])
 def worker_messaging():
@@ -36,6 +36,7 @@ def worker_messaging():
             for message in messages['entry']:
                 for msg in message['messaging']:
                     print(msg)
+                    idx = get_index()
                     if (msg.get('message')) or  (msg.get('postback')):
                         sender_id = msg['sender']['id']
                         user = find_user(sender_id, PAT)
@@ -54,8 +55,8 @@ def worker_messaging():
 
                                     with open(answers, "a") as store:
                                         print("Write to file %d", score)
-                                        line = '{} {}'.format(txt, score)
-                                        store.write('\n'.join(line))
+                                        line = '{} {}\n'.format(txt, score)
+                                        store.write(line)
                                         store.close()
                                     with open(answers, "r") as xx:
                                         lines = xx.readlines()
