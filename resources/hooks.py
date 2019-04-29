@@ -8,8 +8,8 @@ from .utilities import (import_questions, make_response, make_quiz_response, fin
 PAT = os.environ.get('PAT', None)
 verify_token = os.environ.get('VERIFY_TOKEN', None)
 
-answers = []
 letters = ["A", "B", "C", "D"]
+answers = []
 
 quizzing = False
 
@@ -25,6 +25,7 @@ def worker_verification():
     else:
         return "Could not get verification tokens."
 
+idx = len(answers)
 
 @bot.route('/', methods = ['POST'])
 def worker_messaging():
@@ -38,7 +39,6 @@ def worker_messaging():
                     if (msg.get('message')) or  (msg.get('postback')):
                         sender_id = msg['sender']['id']
                         user = find_user(sender_id, PAT)
-                        idx = len(answers)
 
                         if (msg.get('message', None)):
                             received = msg['message']
@@ -58,8 +58,6 @@ def worker_messaging():
                                 txt = received["text"]
                                 if txt in letters and quizzing is True:
                                     score = check_answers(idx, txt)
-                                    answers.append((txt, score))
-                                    print(answers)
 
                         if msg.get('postback'):
                             received = msg['postback']['payload']
