@@ -13,4 +13,4 @@ def setup():
 if __name__ == '__main__':
     app = setup()
     app.config['file'] = sys.argv[1]
-    app.run(port = 5000, debug = True)
+    app.run()
