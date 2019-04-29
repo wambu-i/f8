@@ -86,7 +86,7 @@ def make_quiz_response(_id, idx, token):
 	logger.info(question)
 	if question:
 		choices = make_postback_replies(question)
-		send_postback_replies(idx, question.get("question"), choices, token)
+		send_postback_replies(_id, question.get("question"), choices, token)
 
 
 
