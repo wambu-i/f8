@@ -249,7 +249,7 @@ def check_answers(idx, ans):
 	question = questions.get(str(idx + 1), None)
 	chosen = letters.index(ans)
 	logger.info(chosen)
-	logger.info(len(question["answers"]))
+	logger.info((question["answers"]))
 	score = question["answers"][chosen]
 
 	return score
