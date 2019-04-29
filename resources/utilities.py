@@ -66,11 +66,12 @@ def make_response(_id, t, k, token):
 		api_request = getattr(_CURRENT_MODULE_, req)
 		if t == 'message':
 			if k == 'greeting':
-				msg = loaded.get('text', None) + find_user(_id, token)
+				msg = loaded.get('text', None) + ' ' find_user(_id, token) + ''
 				logger.info(message)
 				api_request(_id, msg, token)
 		else:
-			api_request(_id, loaded.txt, message, token)
+			text = loaded.get('text', None)
+			api_request(_id, text, message, token)
 
 	except AttributeError:
 		logger.warning('Could not find handler for {}'.format(t))
@@ -109,13 +110,13 @@ def send_message_replies(_id, text, token):
 		})
 	r = requests.post(graph.format(token), headers = headers, data = data)
 	if r.status_code == 200:
-		logger.info("Successfully made quick responses request!")
+		logger.info("Successfully made messages responses request!")
 	else:
 		logger.error('{}' - '{}'.format(r.status_code, r.text))
 
 
 
-def send_quick_replies(_id, txt, token, **kwargs):
+def send_quick_replies(_id, txt, msg, token):
 	data = json.dumps({
 		"recipient":{
 			"id": _id
