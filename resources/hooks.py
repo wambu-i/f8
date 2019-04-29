@@ -54,7 +54,8 @@ def worker_messaging():
 
                                     with open(answers, "a") as store:
                                         print("Write to file %d", score)
-                                        store.write('\n'.join('{} {}'.format(txt, score)))
+                                        line = '{} {}'.format(txt, score)
+                                        store.write('\n'.join(line))
                                         store.close()
                                     with open(answers, "r") as xx:
                                         lines = xx.readlines()
