@@ -67,6 +67,7 @@ def make_response(_id, t, k, token):
 		if handler_name == 'message':
 			if k == 'greeting':
 				msg = loaded.text + find_user(_id)
+				logger.info(message)
 				api_request(_id, msg, token)
 		else:
 			pass
@@ -132,7 +133,7 @@ def send_quick_replies(_id, txt, token, **kwargs):
 		logger.error('{}' - '{}'.format(r.status_code, r.text))
 
 def import_questions():
-    questions = []
+    questions = {}
     try:
         with open(quiz_path, "r") as store:
             questions = json.load(store)
