@@ -49,7 +49,7 @@ def worker_messaging():
                                     quizzing = True
                                     print("Creating quiz!")
                                     make_quiz_response(sender_id, idx, PAT)
-                                elif txt in letters and quizzing is True:
+                                elif txt in letters:
                                     score = check_answers(idx, txt)
                                     answers.append((txt, score))
                                     print(answers)
