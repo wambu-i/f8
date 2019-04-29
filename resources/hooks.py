@@ -31,7 +31,7 @@ def worker_messaging():
                 for msg in message['messaging']:
                     if (msg.get('message')) or  (msg.get('postback')):
                         sender_id = msg['sender']['id']
-                        user = find_user(sender_id)
+                        user = find_user(sender_id, PAT)
 
                         if msg.get('postback'):
                             received = msg['postback']['payload']
