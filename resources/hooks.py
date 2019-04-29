@@ -53,8 +53,9 @@ def worker_messaging():
                                     score = check_answers(idx, txt)
 
                                     with open(answers, "a") as store:
-                                        answers.write('\n'.join('{} {}'.format(txt, score)))
-                                    print(answers)
+                                        store.write('\n'.join('{} {}'.format(txt, score)))
+                                        store.close()
+                                    #print(answers)
                                     make_quiz_response(sender_id, idx, PAT)
                             else:
                                 txt = received["text"]
