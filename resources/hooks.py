@@ -11,6 +11,8 @@ verify_token = os.environ.get('VERIFY_TOKEN', None)
 answers = []
 letters = ["A", "B", "C", "D"]
 
+quizzing = False
+
 @bot.route('/', methods = ['GET'])
 def worker_verification():
     if PAT is not None and verify_token is not None:
@@ -27,7 +29,6 @@ def worker_verification():
 @bot.route('/', methods = ['POST'])
 def worker_messaging():
     global quizzing
-    quizzing = False
     try:
         messages = request.get_json()
         if messages['object'] == 'page':
@@ -75,4 +76,5 @@ def handle_error(ex):
     print(request.url_rule.rule)
 
 
-
+def make_quiz():
+    quizzing = True
