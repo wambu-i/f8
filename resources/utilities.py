@@ -66,14 +66,14 @@ def make_response(_id, t, k, token):
 		api_request = getattr(_CURRENT_MODULE_, req)
 		if t == 'message':
 			if k == 'greeting':
-				msg = loaded.text + find_user(_id)
+				msg = loaded.get('text', None) + find_user(_id)
 				logger.info(message)
 				api_request(_id, msg, token)
 		else:
 			api_request(_id, loaded.txt, message, token)
 
 	except AttributeError:
-		logger.warning('Could not find handler for {}'.format(key))
+		logger.warning('Could not find handler for {}'.format(t))
 	return True
 
 def make_quick_replies(payload):
