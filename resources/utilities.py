@@ -98,14 +98,13 @@ def make_message_replies(text):
 	return payload
 
 
-def send_message_replies(_id, text, msg, token,):
+def send_message_replies(_id, text, token):
 	data = json.dumps({
 		"recipient":{
 			"id": _id
 		},
 		"message": {
-			"text": txt,
-			"quick_replies": msg
+			"text": txt
 		}
 		})
 	r = requests.post(graph.format(token), headers = headers, data = data)
