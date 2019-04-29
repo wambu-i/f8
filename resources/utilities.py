@@ -15,6 +15,7 @@ letters = ["A", "B", "C", "D"]
 logger = logging.getLogger('api')
 quiz_path = os.path.abspath("agoa.json")
 resp_path = os.path.abspath("responses.json")
+ans_path = os.path.abspath("answers.txt")
 
 assets = {
 	"quick": {
@@ -31,9 +32,11 @@ headers = {
 }
 
 graph = "https://graph.facebook.com/v3.2/me/messages?access_token={}"
-__all__ = ['make_response', 'import_questions', 'find_user', 'make_quiz_response', 'check_answers']
+__all__ = ['make_response', 'import_questions', 'find_user', 'make_quiz_response', 'check_answers', 'get_index']
 
 _CURRENT_MODULE_ = sys.modules[__name__]
+
+answers = []
 
 def get_response():
 	responses = {}
@@ -245,3 +248,14 @@ def check_answers(idx, ans):
 
 	return score
 
+def score_answers(responses):
+	score = 0
+	for i in range(len(responses)):
+		pass
+
+def get_index():
+	idx = 0
+	with open(ans_path, "r") as f:
+		lines = f.readlines()
+		idx = len([l for l in lines if l.strip(' \n') != ''])
+	return idx

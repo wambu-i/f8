@@ -3,14 +3,14 @@ import json
 import requests
 import os
 from . import bot
-from .utilities import (import_questions, make_response, make_quiz_response, find_user, check_answers)
+from .utilities import (import_questions, make_response, make_quiz_response, find_user, check_answers, get_index)
 
 PAT = os.environ.get('PAT', None)
 verify_token = os.environ.get('VERIFY_TOKEN', None)
 
 letters = ["A", "B", "C", "D"]
-answers = []
 
+answers = "answers.txt"
 quizzing = False
 
 @bot.route('/', methods = ['GET'])
@@ -25,7 +25,7 @@ def worker_verification():
     else:
         return "Could not get verification tokens."
 
-idx = len(answers)
+idx = get_index()
 
 @bot.route('/', methods = ['POST'])
 def worker_messaging():
@@ -51,7 +51,9 @@ def worker_messaging():
                                     make_quiz_response(sender_id, idx, PAT)
                                 elif txt in letters:
                                     score = check_answers(idx, txt)
-                                    answers.append((txt, score))
+
+                                    with open(answers, "a") as store:
+                                        answers.write('\n'.join('{} {}'.format(txt, score)))
                                     print(answers)
                                     make_quiz_response(sender_id, idx, PAT)
                             else:
