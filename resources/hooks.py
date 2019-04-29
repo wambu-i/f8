@@ -36,9 +36,10 @@ def worker_messaging():
             for message in messages['entry']:
                 for msg in message['messaging']:
                     print(msg)
+                    idx = None
                     if get_index():
                         idx = get_index()
-                        
+
                     if (msg.get('message')) or  (msg.get('postback')):
                         sender_id = msg['sender']['id']
                         user = find_user(sender_id, PAT)
