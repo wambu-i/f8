@@ -39,6 +39,7 @@ def worker_messaging():
                     idx = None
                     if get_index():
                         idx = get_index()
+                    print("Index is ", idx)
 
                     if (msg.get('message')) or  (msg.get('postback')):
                         sender_id = msg['sender']['id']
@@ -58,7 +59,7 @@ def worker_messaging():
                                 if txt == 'quiz':
                                     print("Creating quiz!")
                                     make_quiz_response(sender_id, idx, PAT)
-                                    
+
 
     except Exception as e:
         raise e
