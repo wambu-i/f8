@@ -64,13 +64,13 @@ def make_response(_id, t, k, token):
 		handler = getattr(_CURRENT_MODULE_, handler_name)
 		message = handler(loaded)
 		api_request = getattr(_CURRENT_MODULE_, req)
-		if handler_name == 'message':
+		if t == 'message':
 			if k == 'greeting':
 				msg = loaded.text + find_user(_id)
 				logger.info(message)
 				api_request(_id, msg, token)
 		else:
-			pass
+			api_request(_id, loaded.txt, message, token)
 
 	except AttributeError:
 		logger.warning('Could not find handler for {}'.format(key))
@@ -98,7 +98,7 @@ def make_message_replies(text):
 	return payload
 
 
-def send_message_replies(_id, text, token, **kwargs):
+def send_message_replies(_id, text, msg, token,):
 	data = json.dumps({
 		"recipient":{
 			"id": _id
