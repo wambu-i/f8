@@ -9,6 +9,9 @@ PAT = os.environ.get('PAT', None)
 verify_token = os.environ.get('VERIFY_TOKEN', None)
 
 answers = []
+letters = ["A", "B", "C", "D"]
+
+quizzing = False
 
 @bot.route('/', methods = ['GET'])
 def worker_verification():
@@ -34,6 +37,7 @@ def worker_messaging():
                     if (msg.get('message')) or  (msg.get('postback')):
                         sender_id = msg['sender']['id']
                         user = find_user(sender_id, PAT)
+                        idx = len(answers)
 
                         if (msg.get('message', None)):
                             received = msg['message']
@@ -41,8 +45,17 @@ def worker_messaging():
                                 cat = received['quick_reply']['payload']
                                 print(cat)
                                 if cat == 'quiz':
+                                    quizzing = True
                                     print("Creating quiz!")
-                                    make_quiz_response(sender_id, 0, PAT)
+                                    make_quiz_response(sender_id, idx, PAT)
+                            else:
+                                txt = received["text"]
+                                if txt in letters and quizzing is True:
+                                    score = check_answers(idx, txt)
+                                    answers.append((txt, score))
+                                    print(answers)
+
+
 
                         if msg.get('postback'):
                             received = msg['postback']['payload']

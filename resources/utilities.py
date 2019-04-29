@@ -89,6 +89,8 @@ def make_quiz_response(_id, idx, token):
 	letters = ["A", "B", "C", "D"]
 	answer = []
 
+	answer.append(question.get("question"))
+
 	for i in range(len(choices)):
 		ans = '{} - {}\n'.format(letters[i], choices[i])
 		answer.append(ans)
