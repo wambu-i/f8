@@ -40,6 +40,7 @@ def worker_messaging():
                             received = msg['message']
                             if (received.get('quick_reply', None)):
                                 cat = received['quick_reply']['payload']
+                                print(cat)
                                 if cat == 'quiz':
                                     make_quiz_response(sender_id, 0, PAT)
 
