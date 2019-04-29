@@ -10,7 +10,7 @@ verify_token = os.environ.get('VERIFY_TOKEN', None)
 
 letters = ["A", "B", "C", "D"]
 
-answers = "answers.txt"
+answers = os.path.abspath("answers.txt")
 quizzing = False
 
 @bot.route('/', methods = ['GET'])
@@ -53,6 +53,7 @@ def worker_messaging():
                                     score = check_answers(idx, txt)
 
                                     with open(answers, "a") as store:
+                                        print("Write to file %d", score)
                                         store.write('\n'.join('{} {}'.format(txt, score)))
                                         store.close()
                                     #print(answers)
