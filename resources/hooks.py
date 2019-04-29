@@ -43,34 +43,7 @@ def worker_messaging():
                     if (msg.get('message')) or  (msg.get('postback')):
                         sender_id = msg['sender']['id']
                         user = find_user(sender_id, PAT)
-
-                        if (msg.get('message', None)):
-                            received = msg['message']
-                            if (received.get('quick_reply', None)):
-                                txt = received['quick_reply']['payload']
-                                print("Here's the text ", txt)
-                                if txt == 'quiz':
-                                    quizzing = True
-                                    print("Creating quiz!")
-                                    make_quiz_response(sender_id, idx, PAT)
-                                elif txt in letters:
-                                    score = check_answers(idx, txt)
-
-                                    with open(answers, "a") as store:
-                                        print("Write to file %d", score)
-                                        line = '{} {}\n'.format(txt, score)
-                                        store.write(line)
-                                        store.close()
-                                    with open(answers, "r") as xx:
-                                        lines = xx.readlines()
-                                        print(lines)
-                                    #print(answers)
-                                    make_quiz_response(sender_id, idx, PAT)
-                            else:
-                                txt = received["text"]
-                                if txt in letters and quizzing is True:
-                                    score = check_answers(idx, txt)
-
+                        
                         if msg.get('postback'):
                             received = msg['postback']['payload']
                             if received == 'start':
