@@ -9,6 +9,8 @@ formatter = '[%(asctime)-15s] %(levelname)s [%(filename)s.%(funcName)s#L%(lineno
 
 logging.basicConfig(level = logging.DEBUG, format = formatter)
 
+global questions
+
 # Create logger instance
 logger = logging.getLogger('api')
 quiz_path = os.path.abspath("agoa.json")
@@ -29,7 +31,7 @@ headers = {
 }
 
 graph = "https://graph.facebook.com/v3.2/me/messages?access_token={}"
-__all__ = ['make_response', 'import_questions', 'find_user', 'make_quiz_response']
+__all__ = ['make_response', 'import_questions', 'find_user', 'make_quiz_response', 'check_answers']
 
 _CURRENT_MODULE_ = sys.modules[__name__]
 
@@ -230,9 +232,15 @@ def find_user(id, token):
     nm = r.json()
     return nm['first_name']
 
-
+ 
 def handle_quiz(idx):
-  	questions = import_questions()
   	question = questions.get(str(idx + 1), None)
-
   	return question
+
+def check_answers(idx, ans):
+	question = questions.get(str(idx + 1), None)
+	chosen = letters.index(ans)
+	score = question["answers"][chosen]
+
+	return score
+
