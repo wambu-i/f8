@@ -12,7 +12,6 @@ answers = []
 
 @bot.route('/', methods = ['GET'])
 def worker_verification():
-    make_response("text", "introduction")
     if PAT is not None and verify_token is not None:
         if request.args.get('hub.verify_token', '') == verify_token:
             print("Verification successful!")

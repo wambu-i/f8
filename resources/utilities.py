@@ -83,11 +83,30 @@ def make_response(_id, t, k, token, **kwargs):
 
 def make_quiz_response(_id, idx, token):
 	question = handle_quiz(idx)
-	logger.info(question)
-	if question:
-		choices = make_postback_replies(question)
-		send_postback_replies(_id, question.get("question"), choices, token)
+	if not question:
+		return False
+	choices = question.get("choices", None)
+	letters = ["A", "B", "C", "D"]
+	ans = ""
 
+	for i in range(len(choices)):
+		ans = '{} - {}\n'.format(letters[i], choices[i])
+
+	logger.info(question)
+
+	replies = []
+
+	for i in range(len(letters)):
+		reply = {}
+		reply["content_type"] = "text"
+		reply["title"] = letters[i]
+		reply["payload"] = letters[i]
+		print(reply)
+		replies.append(reply)
+
+	send_quick_replies(_id, ans, replies, token)
+
+	return True
 
 
 def make_quick_replies(payload):
@@ -109,9 +128,10 @@ def make_postback_replies(payload):
 
 	for i in range(len(payload.get("choices", None))):
 		reply = {}
-		reply["content_type"] = "text"
+
+		reply["buttons"] = []
 		reply["title"] = payload["choices"][i]
-		reply["payload"] = i
+		
 		print(reply)
 		replies.append(reply)
 
