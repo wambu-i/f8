@@ -43,12 +43,19 @@ def worker_messaging():
                     if (msg.get('message')) or  (msg.get('postback')):
                         sender_id = msg['sender']['id']
                         user = find_user(sender_id, PAT)
-                        
+
                         if msg.get('postback'):
                             received = msg['postback']['payload']
                             if received == 'start':
                                 make_response(sender_id, 'message', 'greeting', PAT)
                                 make_response(sender_id, 'quick', 'introduction', PAT)
+
+                        if (msg.get('message')):
+                            received = msg['message']
+                            if (received.get('quick_reply', None)):
+                                txt = received['quick_reply']['payload']
+                                print("Here's the text ", txt)
+                                
     except Exception as e:
         raise e
 
