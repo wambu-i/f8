@@ -34,6 +34,12 @@ def worker_messaging():
                         sender_id = msg['sender']['id']
                         user = find_user(sender_id, PAT)
 
+                        if (msg.get('message', None)):
+                            received = msg['message']
+                            if (received.get('quick_replies', None)):
+                                cat = received['quick_reply']['payload']
+                                print(cat)
+
                         if msg.get('postback'):
                             received = msg['postback']['payload']
                             if received == 'start':
