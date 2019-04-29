@@ -104,7 +104,7 @@ def send_message_replies(_id, text, token):
 			"id": _id
 		},
 		"message": {
-			"text": txt
+			"text": text
 		}
 		})
 	r = requests.post(graph.format(token), headers = headers, data = data)
