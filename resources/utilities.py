@@ -168,9 +168,15 @@ def send_postback_replies(_id, txt, msg, token):
 			"attachment":{
 				"type":"template",
 				"payload":{
-					"template_type":"button",
-					"text": txt,
-					"buttons": msg
+					"template_type":"generic",
+					"elements": [
+						{
+						"title": txt,
+						"subtitle": "Stuff to come",
+
+						},
+						"buttons": msg
+					]
 				}
 			}
 			}
