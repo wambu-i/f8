@@ -29,6 +29,7 @@ def worker_messaging():
         if messages['object'] == 'page':
             for message in messages['entry']:
                 for msg in message['messaging']:
+                    logger.info(msg)
                     if (msg.get('message')) or  (msg.get('postback')):
                         sender_id = msg['sender']['id']
                         user = find_user(sender_id, PAT)
