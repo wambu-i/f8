@@ -139,7 +139,7 @@ def send_message_replies(_id, text, token):
 	if r.status_code == 200:
 		logger.info("Successfully made messages responses request!")
 	else:
-		logger.error('{}' - '{}'.format(r.status_code, r.text))
+		logger.error('{}' : '{}'.format(r.status_code, r.text))
 
 
 
@@ -180,7 +180,7 @@ def send_postback_replies(_id, txt, msg, token):
 	if r.status_code == 200:
 		logger.info("Successfully made postback responses request!")
 	else:
-		logger.error('{}' - '{}'.format(r.status_code, r.text))
+		logger.error('{}' : '{}'.format(r.status_code, r.text))
 
 def import_questions():
     questions = {}
