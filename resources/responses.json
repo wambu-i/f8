@@ -1,0 +1,6 @@
+{
+	"introduction" : {
+		"options" : ["Take AGOA Quiz", "Readiness Guides", "Export Categories", "Packaging and Labelling"],
+		"payload": ["quiz", "guides", "categories", "pl"]
+	}
+}

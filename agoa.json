@@ -1,0 +1,10 @@
+{
+	"service" : { 
+		"question" : "What product(s)/service(s) does/do your company offer?",
+		"choices" : ["Fast-selling consumer goods (e.g. food, drink, confectionery products)", 
+			"Consumer durables (e.g. furniture, hi-fi, appliances)", 
+			"Industrial consumables or durables (e.g. raw materials, components, machinery, etc.)", 
+			"Services (e.g. financial, creative, training)"],
+		"answers": [3, 3, 3, 3]
+	}  
+}

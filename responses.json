@@ -1,0 +1,10 @@
+{
+	"greeting": {
+		"text": "Hello!"
+	},
+	"introduction" : {
+		"text": "What would you like us to help you with?",
+		"options" : ["Take AGOA Quiz", "Readiness Guides", "Export Categories", "Packaging/Labelling"],
+		"payload": ["quiz", "guides", "categories", "pl"]
+	}
+}
