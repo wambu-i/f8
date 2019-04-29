@@ -55,7 +55,11 @@ def worker_messaging():
                             if (received.get('quick_reply', None)):
                                 txt = received['quick_reply']['payload']
                                 print("Here's the text ", txt)
-                                
+                                if txt == 'quiz':
+                                    print("Creating quiz!")
+                                    make_quiz_response(sender_id, idx, PAT)
+                                    
+
     except Exception as e:
         raise e
 
