@@ -87,10 +87,11 @@ def make_quiz_response(_id, idx, token):
 		return False
 	choices = question.get("choices", None)
 	letters = ["A", "B", "C", "D"]
-	ans = ""
+	answer = []
 
 	for i in range(len(choices)):
 		ans = '{} - {}\n'.format(letters[i], choices[i])
+		answer.append(ans)
 
 	logger.info(question)
 
@@ -104,7 +105,7 @@ def make_quiz_response(_id, idx, token):
 		print(reply)
 		replies.append(reply)
 
-	send_quick_replies(_id, ans, replies, token)
+	send_quick_replies(_id, ''.join(answer), replies, token)
 
 	return True
 
