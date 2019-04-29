@@ -9,8 +9,6 @@ formatter = '[%(asctime)-15s] %(levelname)s [%(filename)s.%(funcName)s#L%(lineno
 
 logging.basicConfig(level = logging.DEBUG, format = formatter)
 
-global questions
-
 # Create logger instance
 logger = logging.getLogger('api')
 quiz_path = os.path.abspath("agoa.json")
@@ -239,6 +237,7 @@ def handle_quiz(idx):
 	return question
 
 def check_answers(idx, ans):
+	questions = import_questions()
 	question = questions.get(str(idx + 1), None)
 	chosen = letters.index(ans)
 	score = question["answers"][chosen]
