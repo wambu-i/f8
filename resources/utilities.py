@@ -260,9 +260,10 @@ def score_answers(responses):
 		pass
 
 def get_index():
-	idx = 0
+	idx = None
 	with open(ans_path, "r") as f:
 		lines = f.readlines()
 		print(lines)
 		idx = len([l for l in lines if l.strip(' \n') != ''])
+	print(idx)
 	return idx
