@@ -42,6 +42,7 @@ def worker_messaging():
                                 cat = received['quick_reply']['payload']
                                 print(cat)
                                 if cat == 'quiz':
+                                    print("Creating quiz!")
                                     make_quiz_response(sender_id, 0, PAT)
 
                         if msg.get('postback'):
