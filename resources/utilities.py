@@ -29,7 +29,7 @@ headers = {
 }
 
 graph = "https://graph.facebook.com/v3.2/me/messages?access_token={}"
-__all__ = ['make_response', 'import_questions', 'find_user']
+__all__ = ['make_response', 'import_questions', 'find_user', 'make_quiz_response']
 
 _CURRENT_MODULE_ = sys.modules[__name__]
 
@@ -44,7 +44,7 @@ def get_response():
 		return responses
 	return responses
 
-def make_response(_id, t, k, token):
+def make_response(_id, t, k, token, **kwargs):
 	loaded = None
 	message = None
 
@@ -69,13 +69,25 @@ def make_response(_id, t, k, token):
 				msg = loaded.get('text', None) + ' ' + find_user(_id, token) + ''
 				logger.info(message)
 				api_request(_id, msg, token)
-		else:
+		elif t == 'quick':
 			text = loaded.get('text', None)
 			api_request(_id, text, message, token)
+		else:
+			pass 
+
+
 
 	except AttributeError:
 		logger.warning('Could not find handler for {}'.format(t))
 	return True
+
+def make_quiz_response(_id, idx, token):
+	question = handle_quiz(idx)
+	if question:
+		choices = make_postback_replies(question)
+		send_postback_replies(idx, question.get("question"), choices, token)
+
+
 
 def make_quick_replies(payload):
 	replies = []
@@ -85,6 +97,20 @@ def make_quick_replies(payload):
 		reply["content_type"] = "text"
 		reply["title"] = payload["options"][i]
 		reply["payload"] = payload["payload"][i]
+		print(reply)
+		replies.append(reply)
+
+	return replies
+
+
+def make_postback_replies(payload):
+	replies = []
+
+	for i in range(len(payload.get("choices", None))):
+		reply = {}
+		reply["content_type"] = "text"
+		reply["title"] = payload["choices"][i]
+		reply["payload"] = i
 		print(reply)
 		replies.append(reply)
 
@@ -132,6 +158,29 @@ def send_quick_replies(_id, txt, msg, token):
 	else:
 		logger.error('{}' - '{}'.format(r.status_code, r.text))
 
+def send_postback_replies(_id, txt, msg, token):
+	data = json.dumps({
+		"recipient":{
+			"id": _id
+		},
+		"message":{
+			"attachment":{
+				"type":"template",
+				"payload":{
+					"template_type":"button",
+					"text": txt,
+					"buttons": msg
+				}
+			}
+			}
+		})
+
+	r = requests.post(graph.format(token), headers = headers, data = data)
+	if r.status_code == 200:
+		logger.info("Successfully made postback responses request!")
+	else:
+		logger.error('{}' - '{}'.format(r.status_code, r.text))
+
 def import_questions():
     questions = {}
     try:
@@ -151,3 +200,10 @@ def find_user(id, token):
     r = requests.get('https://graph.facebook.com/v3.2/' + id + '?fields=first_name,last_name&access_token=' + token , headers = headers)
     nm = r.json()
     return nm['first_name']
+
+
+def handle_quiz(idx):
+  	questions = import_questions()
+  	question = questions.get(str(idx + 1), None)
+
+  	return question
