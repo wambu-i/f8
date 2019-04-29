@@ -36,7 +36,7 @@ def worker_messaging():
 
                         if (msg.get('message', None)):
                             received = msg['message']
-                            if (received.get('quick_replies', None)):
+                            if (received.get('quick_reply', None)):
                                 cat = received['quick_reply']['payload']
                                 print(cat)
 
