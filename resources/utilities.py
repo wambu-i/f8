@@ -248,6 +248,7 @@ def check_answers(idx, ans):
 	questions = import_questions()
 	question = questions.get(str(idx + 1), None)
 	chosen = letters.index(ans)
+	logger.info(chosen)
 	score = question["answers"][chosen]
 
 	return score
