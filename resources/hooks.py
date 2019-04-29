@@ -60,6 +60,19 @@ def worker_messaging():
                                     print("Creating quiz!")
                                     make_quiz_response(sender_id, idx, PAT)
 
+                                elif txt in letters:
+                                    score = check_answers(idx, txt)
+                                    with open(answers, "a") as store:
+                                        print("Write to file %d", score)
+                                        line = '{} {}\n'.format(txt, score)
+                                        store.write(line)
+                                        store.close()
+                                    with open(answers, "r") as xx:
+                                        lines = xx.readlines()
+                                        print(lines)
+                                    #print(answers)
+                                    make_quiz_response(sender_id, idx, PAT)
+
 
     except Exception as e:
         raise e
