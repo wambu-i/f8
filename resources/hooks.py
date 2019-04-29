@@ -3,16 +3,14 @@ import json
 import requests
 import os
 from . import bot
-from .utilities import import_questions
+from .utilities import (import_questions, make_response, find_user)
 
 PAT = os.environ.get('PAT', None)
 verify_token = os.environ.get('VERIFY_TOKEN', None)
 
 @bot.route('/', methods = ['GET'])
 def worker_verification():
-    pp = current_app.config.get("file")
-    xx = import_questions(pp)
-    print(xx)
+    make_response("text", "introduction")
     if PAT is not None and verify_token is not None:
         if request.args.get('hub.verify_token', '') == verify_token:
             print("Verification successful!")
@@ -26,14 +24,18 @@ def worker_verification():
 
 @bot.route('/', methods = ['POST'])
 def worker_messaging():
-    xx = import_questions()
-    print(xx)
     try:
         if messages['object'] == 'page':
             for message in messages['entry']:
                 for msg in message['messaging']:
                     if (msg.get('message')) or  (msg.get('postback')):
-                        print(msg)
+                        sender_id = msg['sender']['id']
+                        user = find_user(sender_id)
+
+                        if msg.get('postback'):
+                            received = msg['postback']['payload']
+                            if received == 'start':
+                                make_response(sender_id, 'message', 'greeting', PAT)
     except Exception as e:
         raise e
 
