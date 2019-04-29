@@ -48,7 +48,7 @@ def worker_messaging():
                             received = msg['message']
                             if (received.get('quick_reply', None)):
                                 txt = received['quick_reply']['payload']
-                                print(txt)
+                                print("Here's the text ", txt)
                                 if txt == 'quiz':
                                     quizzing = True
                                     print("Creating quiz!")
