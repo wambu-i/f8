@@ -37,7 +37,7 @@ def worker_messaging():
                 for msg in message['messaging']:
                     print(msg)
                     idx = None
-                    if get_index():
+                    if get_index() is not None:
                         idx = get_index()
                     print("Index is ", idx)
 
