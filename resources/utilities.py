@@ -10,6 +10,7 @@ formatter = '[%(asctime)-15s] %(levelname)s [%(filename)s.%(funcName)s#L%(lineno
 logging.basicConfig(level = logging.DEBUG, format = formatter)
 
 letters = ["A", "B", "C", "D"]
+booleans = ["Yes", "No"]
 
 # Create logger instance
 logger = logging.getLogger('api')
@@ -80,8 +81,6 @@ def make_response(_id, t, k, token, **kwargs):
 		else:
 			pass 
 
-
-
 	except AttributeError:
 		logger.warning('Could not find handler for {}'.format(t))
 	return True
@@ -96,6 +95,7 @@ def make_quiz_response(_id, idx, token):
 	answer.append(question.get("question") + '\n')
 
 	for i in range(len(choices)):
+
 		ans = '{} - {}\n'.format(letters[i], choices[i])
 		answer.append(ans)
 
@@ -103,10 +103,14 @@ def make_quiz_response(_id, idx, token):
 
 	replies = []
 
-	for i in range(len(letters)):
+	for i in range(len(choices)):
 		reply = {}
 		reply["content_type"] = "text"
-		reply["title"] = letters[i]
+		if len(choices) > 2:
+			reply["title"] = letters[i]
+		else:
+			reply["title"] = booleans[i]
+		
 		reply["payload"] = letters[i]
 		print(reply)
 		replies.append(reply)
