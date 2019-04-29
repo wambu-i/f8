@@ -9,6 +9,8 @@ formatter = '[%(asctime)-15s] %(levelname)s [%(filename)s.%(funcName)s#L%(lineno
 
 logging.basicConfig(level = logging.DEBUG, format = formatter)
 
+letters = ["A", "B", "C", "D"]
+
 # Create logger instance
 logger = logging.getLogger('api')
 quiz_path = os.path.abspath("agoa.json")
@@ -86,7 +88,6 @@ def make_quiz_response(_id, idx, token):
 	if not question:
 		return False
 	choices = question.get("choices", None)
-	letters = ["A", "B", "C", "D"]
 	answer = []
 
 	answer.append(question.get("question"))
