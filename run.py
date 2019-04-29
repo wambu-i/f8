@@ -9,8 +9,9 @@ def setup():
     CORS(application)
     return application
 
+app = setup()
 
 if __name__ == '__main__':
-    app = setup()
+#    app = setup()
     app.config['file'] = sys.argv[1]
     app.run()
