@@ -90,7 +90,7 @@ def make_quiz_response(_id, idx, token):
 	choices = question.get("choices", None)
 	answer = []
 
-	answer.append(question.get("question"))
+	answer.append(question.get("question") + '\n')
 
 	for i in range(len(choices)):
 		ans = '{} - {}\n'.format(letters[i], choices[i])

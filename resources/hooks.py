@@ -53,6 +53,7 @@ def worker_messaging():
                                     score = check_answers(idx, txt)
                                     answers.append((txt, score))
                                     print(answers)
+                                    make_quiz_response(sender_id, idx, PAT)
                             else:
                                 txt = received["text"]
                                 if txt in letters and quizzing is True:
