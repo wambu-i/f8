@@ -1,7 +1,7 @@
 import json
-
-
-def import_questions(path):
+import os
+path = os.path.abspath("agoa.json")
+def import_questions(files):
     questions = []
     try:
         with open(path, "r") as store:
