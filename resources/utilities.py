@@ -172,7 +172,7 @@ def send_postback_replies(_id, txt, msg, token):
 					"elements": [
 						{
 						"title": txt,
-						"subtitle": "Stuff to come"
+						"subtitle": "Stuff to come",
 						"buttons": msg
 						}
 					]
