@@ -42,20 +42,22 @@ def worker_messaging():
                         if (msg.get('message', None)):
                             received = msg['message']
                             if (received.get('quick_reply', None)):
-                                cat = received['quick_reply']['payload']
+                                txt = received['quick_reply']['payload']
                                 print(cat)
-                                if cat == 'quiz':
+                                if txt == 'quiz':
                                     quizzing = True
                                     print("Creating quiz!")
                                     make_quiz_response(sender_id, idx, PAT)
+                                elif txt in letters and quizzing is True:
+                                    score = check_answers(idx, txt)
+                                    answers.append((txt, score))
+                                    print(answers)
                             else:
                                 txt = received["text"]
                                 if txt in letters and quizzing is True:
                                     score = check_answers(idx, txt)
                                     answers.append((txt, score))
                                     print(answers)
-
-
 
                         if msg.get('postback'):
                             received = msg['postback']['payload']
