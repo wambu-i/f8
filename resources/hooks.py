@@ -37,6 +37,7 @@ def worker_messaging():
                             received = msg['postback']['payload']
                             if received == 'start':
                                 make_response(sender_id, 'message', 'greeting', PAT)
+                                make_response(sender_id, 'quick', 'introduction', PAT)
     except Exception as e:
         raise e
 

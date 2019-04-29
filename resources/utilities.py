@@ -28,7 +28,7 @@ headers = {
 	'Content-Type' : 'application/json'
 }
 
-graph = "https://graph.facebook.com/v3.2/me/messages?access_token="
+graph = "https://graph.facebook.com/v3.2/me/messages?access_token={}"
 __all__ = ['make_response', 'import_questions', 'find_user']
 
 _CURRENT_MODULE_ = sys.modules[__name__]
@@ -143,10 +143,10 @@ def import_questions():
     return questions
 
 
-def find_user(id):
+def find_user(id, token):
     headers = {
     'Content-Type' : 'application/json'
     }
-    r = requests.get('https://graph.facebook.com/v2.10/' + id + '?fields=first_name,last_name&access_token=' + PAT, headers = headers)
+    r = requests.get('https://graph.facebook.com/v3.2/' + id + '?fields=first_name,last_name&access_token=' + token , headers = headers)
     nm = r.json()
     return nm['first_name']
