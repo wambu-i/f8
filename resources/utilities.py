@@ -235,8 +235,8 @@ def find_user(id, token):
  
 def handle_quiz(idx):
 	questions = import_questions()
-  	question = questions.get(str(idx + 1), None)
-  	return question
+	question = questions.get(str(idx + 1), None)
+	return question
 
 def check_answers(idx, ans):
 	question = questions.get(str(idx + 1), None)
