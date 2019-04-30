@@ -213,13 +213,13 @@ def send_guide_options(id, token):
 			"title": "1. Prepare to export",
 			"default_action": {
 				"type": "web_url",
-				"url": "https://f8-2019.firebaseapp.com/{}/guide/export".format(language),
+				"url": "https://f8-2019.firebaseapp.com/{}/guide/prepare".format(language),
 				"webview_height_ratio": "tall",
 			},
 			"buttons": [
 				{
 					"type": "web_url",
-					"url": "https://f8-2019.firebaseapp.com/{}/guide/export".format(language),
+					"url": "https://f8-2019.firebaseapp.com/{}/guide/prepare".format(language),
 					"title": "Learn more"
 				}
 			]
@@ -252,16 +252,16 @@ def send_guide_options(id, token):
 				}
 			]
 		}, {
-			"title": "4. Exporting to the U.S.",
+			"title": "4. Arrange shipment",
 			"default_action": {
 				"type": "web_url",
-				"url": "https://f8-2019.firebaseapp.com/{}/guide/export_us".format(language),
+				"url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
 				"webview_height_ratio": "tall",
 			},
 			"buttons": [
 				{
 					"type": "web_url",
-					"url": "https://f8-2019.firebaseapp.com/{}/guide/export_us".format(language),
+					"url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
 					"title": "Learn more"
 				}
 			]
