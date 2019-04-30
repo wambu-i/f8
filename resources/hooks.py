@@ -58,6 +58,8 @@ def worker_messaging():
                                 print("Here's the text ", txt)
                                 if txt == 'quiz':
                                     print("Creating quiz!")
+                                    with open(answers, "r") as store:
+                                        store.close()
                                     make_quiz_response(sender_id, idx, PAT)
 
                                 elif txt in letters:
