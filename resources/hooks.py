@@ -83,11 +83,11 @@ def worker_messaging():
                                         [
                                             {
                                                 "type": "web_url",
-                                                "url": "f8-2019.firebaseapp.com/guide",
+                                                "url": "https://f8-2019.firebaseapp.com/guide",
                                                 "title": "Open the guide",
                                                 "webview_height_ratio": "tall",
                                                 "messenger_extensions": "false",
-                                                "fallback_url": "agoa.org"
+                                                "fallback_url": "https://agoa.org"
                                             }
                                         ], PAT
                                         )
