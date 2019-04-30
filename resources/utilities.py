@@ -72,7 +72,7 @@ def make_response(_id, t, k, token, **kwargs):
 
 	handler_name = 'make_{}_replies'.format(t)
 	req = 'send_{}_replies'.format(t)
-	logger.info(handler, req)
+	logger.info(handler_name, req)
 	_type = assets[t]["type"]
 	try:
 		handler = getattr(_CURRENT_MODULE_, handler_name)
