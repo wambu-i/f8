@@ -246,7 +246,7 @@ def handle_quiz(idx):
 
 def check_answers(idx, ans):
 	questions = import_questions()
-	question = questions.get(str(idx), None)
+	question = questions.get(str(idx + 1), None)
 	chosen = letters.index(ans)
 	logger.info(chosen)
 	logger.info((question["answers"]))
@@ -265,5 +265,6 @@ def get_index():
 		lines = f.readlines()
 		print(lines)
 		idx = len([l for l in lines if l.strip(' \n') != ''])
+		f.close()
 	print(idx)
 	return idx
