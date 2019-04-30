@@ -202,7 +202,7 @@ def send_quick_replies(_id, txt, msg, token):
 
 def send_guide_options(id, token):
     language = get_language(_id, token)[:2]
-	send_carousel(id, [
+    send_carousel(id, [
             {
                 "title": "1. Prepare to export",
                 "default_action": {
