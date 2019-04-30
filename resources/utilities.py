@@ -28,6 +28,12 @@ assets = {
 	}
 }
 
+reviews = [
+"Your company would seem to understand the commitment, strategies and resources needed to be a successful exporter. At the very least, you have a basis for beginning to export to the U.S.",
+"Your company has a serious interest in exporting, but there are some areas of weakness in your export strategy that you should address if you want your export strategy to succeed. Careful consideration should be given, particularly to those questions that you scored low on, before embarking on an ambitious export strategy.",
+"Your company is very weak in terms of preparing to export, and needs to do much more to ready itself for the U.S. market. There are considerable weaknesses, and if they are not addressed, it is highly unlikely that your export strategy will be successful."
+]
+
 headers = {
 	'Content-Type' : 'application/json'
 }
@@ -286,7 +292,18 @@ def score_answers(_id, token):
 		final += int(score.strip('\n'))
 
 	message = "You scored {}".format(final)
+	rev = None
+
+	if final > 80:
+		rev = reviews[0]
+	elif final > 47 and final < 80:
+		rev = reviews[1]
+	else:
+		rev = reviews[2]
+
 	send_message_replies(_id, message, token)
+	send_message_replies(_id, rev, token)
+
 
 def get_index():
 	idx = None
