@@ -240,6 +240,7 @@ def find_user(id, token):
 
  
 def handle_quiz(idx):
+	logger.info(idx)
 	questions = import_questions()
 	question = questions.get(str(idx + 1), None)
 	return question
