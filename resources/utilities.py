@@ -110,7 +110,7 @@ def make_quiz_response(_id, idx, token):
 			reply["title"] = letters[i]
 		else:
 			reply["title"] = booleans[i]
-		
+
 		reply["payload"] = letters[i]
 		print(reply)
 		replies.append(reply)
@@ -190,7 +190,7 @@ def send_quick_replies(_id, txt, msg, token):
 	else:
 		logger.error('{} :{}'.format(r.status_code, r.text))
 
-def send_carousel(id, payload):
+def send_carousel(id, payload, token):
 	data = json.dumps({
 "recipient":{
     "id": id

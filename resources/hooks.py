@@ -88,7 +88,8 @@ def worker_messaging():
                                                 "webview_height_ratio": "tall",
                                                 "messenger_extensions": "false",
                                                 "fallback_url": "agoa.org"
-                                            }]
+                                            }
+                                        ], PAT
                                         )
                                 elif txt == 'categories':
                                     send_carousel(sender_id,
@@ -178,8 +179,8 @@ def worker_messaging():
                                                               }
                                                           ]
                                                       },
-                                                  ]
-                                                  )
+                                                  ],
+                                                  PAT)
 
                             else:
                                 make_response(sender_id, 'quick', 'introduction', PAT)
