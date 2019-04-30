@@ -21,7 +21,7 @@
       "Entre un et trois ans",
       "Plus de trois ans"
     ],
-    "answers": [5, 0, 1, 3],
+    "answers": [5, 0, 1, 3]
   },
   "3": {
     "question": "La tendance des ventes et des demandes est-elle à la hausse ou à la baisse ?",
@@ -42,7 +42,7 @@
     "question": "Pour quel intervalle de temps le business plan de votre entreprise est-il ?",
     "choices": ["Six mois", "Un an", "Trois ans", "Pas de plan d'affaires"],
     "answers": [-30, 1, 4, -50],
-	"info": {
+  "info": {
       "text": "Instructions sur les business plans",
       "link": "https://agoa.info/images/documents/5179/Business%20planning%20Instruction%20and%20Business%20Plan%20Template%20(VEGA).pdf"
     }
@@ -63,9 +63,8 @@
       "Minime (moins d'un mois)",
       "Je ne sais pas"
     ],
-    "answers": [7, 1, -15, -15]
-	},
-  	"info": {
+    "answers": [7, 1, -15, -15],
+    "info": {
       "text": "Planification de l'export aux États-Unis",
       "link": "https://agoa.info/images/documents/5176/Exporting%20to%20the%20US%20-%20A%20guide%20to%20small%20foreign%20exporters.pdf"
     }
@@ -132,12 +131,13 @@
     "question": "Avez-vous choisi les canaux de distribution que vous utiliserez aux États-Unis ?",
     "choices": [
       "Oui",
-      "Non",
+      "Non"
     ],
     "answers": [3, 0],
     "info": {
       "text": "Directives de stratégies de distribution",
       "link": "https://agoa.info/toolkit/exporter-resources/national-agoa-strategies.html"
+  }
   },
   "15": {
     "question": "Avez-vous une idée claire de la combinaison de méthodes promotionnelles qui seront utilisées aux États-Unis ?",
@@ -247,4 +247,5 @@
     ],
     "answers": [2, 2, 5, 0]
   }
+}
 }
