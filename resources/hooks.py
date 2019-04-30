@@ -35,7 +35,7 @@ def worker_messaging():
             for message in messages['entry']:
                 for msg in message['messaging']:
                     print(msg)
-                    idx = None
+                    idx = 0
                     print("Index is ", idx)
 
                     if (msg.get('message')) or  (msg.get('postback')):
