@@ -67,7 +67,7 @@ def worker_messaging():
 
                                     idx = get_index()
 
-                                    if idx == 25:
+                                    if idx == 4:
                                         score_answers(sender_id, PAT)
 
                                     score = check_answers(idx, txt)
