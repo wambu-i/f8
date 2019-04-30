@@ -33,7 +33,7 @@ headers = {
 }
 
 graph = "https://graph.facebook.com/v3.2/me/messages?access_token={}"
-__all__ = ['make_response', 'import_questions', 'find_user', 'make_quiz_response', 'check_answers', 'get_index']
+__all__ = ['make_response', 'import_questions', 'find_user', 'make_quiz_response', 'check_answers', 'get_index', 'score_answers']
 
 _CURRENT_MODULE_ = sys.modules[__name__]
 
@@ -272,8 +272,13 @@ def check_answers(idx, ans):
 
 	return score
 
-def score_answers(responses):
+def score_answers():
 	score = 0
+	answered = []
+	with open(ans_path, "r") as answers:
+		line = answers.readlines()
+		answered.append(line)
+	print(answered)
 	for i in range(len(responses)):
 		pass
 
