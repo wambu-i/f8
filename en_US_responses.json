@@ -1,6 +1,7 @@
 {
 	"greeting": {
-		"text": "Hello!"
+		"text": "Hello",
+		"description": "Thank you for reaching out to Xport2US, we are here to help you with evaluating the readiness of your business to export to the US and help you understand the regulations."
 	},
 	"introduction" : {
 		"text": "What would you like us to help you with?",

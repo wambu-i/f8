@@ -44,11 +44,11 @@ _CURRENT_MODULE_ = sys.modules[__name__]
 
 answers = []
 
-def get_response():
+def get_response(path):
 	responses = {}
 	print(resp_path)
 	try:
-		with open(resp_path, "r") as store:
+		with open(path, "r") as store:
 			responses = json.load(store)
 			store.close()
 	except (IOError, OSError):
@@ -59,7 +59,9 @@ def make_response(_id, t, k, token, **kwargs):
 	loaded = None
 	message = None
 
-	response = get_response()
+	language = get_language(_id, token)
+	path = language + "_responses.json"
+	response = get_response(path)
 	if response:
 		loaded = response.get(k, None)
 	else:
@@ -76,7 +78,7 @@ def make_response(_id, t, k, token, **kwargs):
 		message = handler(loaded)
 		api_request = getattr(_CURRENT_MODULE_, req)
 		if t == 'message':
-			if k == 'greeting':
+			if k == 'greeting' or k == 'description':
 				msg = loaded.get('text', None) + ' ' + find_user(_id, token) + ''
 				logger.info(message)
 				api_request(_id, msg, token)

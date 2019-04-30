@@ -1,0 +1,17 @@
+{
+	"greeting": {
+		"text": "Salut!",
+		"description": "thank you for reaching out to Xport2US, we are here to help you with evaluating the readiness of your business to export to the US and help you understand the regulations."
+	},
+	"introduction" : {
+		"text": "Que voulez vous apprendre?",
+		"options" : ["Take AGOA Quiz", "Readiness Guides", "Export Categories"],
+		"payload": ["quiz", "guides", "categories"]
+	},
+	"continue" : {
+		"text": "Do you need any more help?",
+		"options" : ["Take AGOA Quiz", "Readiness Guides", "Export Categories"],
+		"payload": ["quiz", "guides", "categories"]
+	}
+}
+	
