@@ -448,6 +448,7 @@ def get_language(id, token):
 
 	r = requests.get('https://graph.facebook.com/v3.2/' + id + '?fields=locale&access_token=' + token, headers = headers)
 	nm = r.json()
+	print(nm)
 	return nm['locale']
 
 def handle_quiz(_id, token, idx):
@@ -458,8 +459,10 @@ def handle_quiz(_id, token, idx):
 	question = questions.get(str(idx + 1), None)
 	return question
 
-def check_answers(idx, ans):
-	questions = import_questions()
+def check_answers(_id, token, idx, ans):
+	language = get_language(_id, token)
+	path = language + "_agoa.json"
+	questions = import_questions(path)
 	question = questions.get(str(idx + 1), None)
 	chosen = letters.index(ans)
 	logger.info(chosen)

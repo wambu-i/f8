@@ -75,7 +75,7 @@ def worker_messaging():
                                         make_response(sender_id, 'quick', 'continue', PAT)
                                         continue
 
-                                    score = check_answers(idx, txt)
+                                    score = check_answers(sender_id, PAT, idx, txt)
                                     with open(answers, "a") as store:
                                         print("Write to file %d", score)
                                         line = '{} {}\n'.format(txt, score)
