@@ -61,6 +61,9 @@ def worker_messaging():
                                     with open(answers, "r") as store:
                                         store.close()
                                     make_quiz_response(sender_id, idx, PAT)
+                                    with open(answers, "r") as xx:
+                                        lines = xx.readlines()
+                                        print(lines)
 
                                 elif txt in letters:
                                     score = check_answers(idx, txt)
@@ -69,9 +72,6 @@ def worker_messaging():
                                         line = '{} {}\n'.format(txt, score)
                                         store.write(line)
                                         store.close()
-                                    with open(answers, "r") as xx:
-                                        lines = xx.readlines()
-                                        print(lines)
                                     #print(answers)
                                     make_quiz_response(sender_id, idx, PAT)
 
