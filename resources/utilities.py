@@ -72,17 +72,18 @@ def make_response(_id, t, k, token, **kwargs):
 
 	handler_name = 'make_{}_replies'.format(t)
 	req = 'send_{}_replies'.format(t)
-	logger.info(handler_name, req)
+	#logger.info(handler_name, req)
 	_type = assets[t]["type"]
 	try:
 		handler = getattr(_CURRENT_MODULE_, handler_name)
 		message = handler(loaded)
 		api_request = getattr(_CURRENT_MODULE_, req)
 		if t == 'message':
-			if k == 'greeting' or k == 'description':
+			if k == 'greeting':
 				msg = loaded.get('text', None) + ' ' + find_user(_id, token) + '!'
 				logger.info(message)
 				api_request(_id, msg, token)
+				api_request(_id, loaded["description"], token)
 		elif t == 'quick':
 			text = loaded.get('text', None)
 			api_request(_id, text, message, token)
