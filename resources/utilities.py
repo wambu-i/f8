@@ -282,7 +282,9 @@ def score_answers():
 	logger.info(answered)
 	for i in range(len(answered)):
 		score += int(answered[i].strip('\n'))
-	logger.info(score)
+
+	message = "You scored {}".format(score)
+	logger.info(message)
 
 def get_index():
 	idx = None
