@@ -183,10 +183,7 @@ def worker_messaging():
                                                   )
 
                             else:
-                                txt = received["text"]
-                                if txt in letters and quizzing is True:
-                                    score = check_answers(idx, txt)
-
+                                pass
 
     except Exception as e:
         raise e
