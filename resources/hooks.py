@@ -29,13 +29,10 @@ def worker_verification():
 
 @bot.route('/', methods = ['POST'])
 def worker_messaging():
-    global quizzing
     try:
         messages = request.get_json()
         if messages['object'] == 'page':
-            for message 
-
-            in messages['entry']:
+            for message in messages['entry']:
                 for msg in message['messaging']:
                     print(msg)
                     idx = None
@@ -68,7 +65,8 @@ def worker_messaging():
                                         print(lines)
 
                                 elif txt in letters:
-                                    print("Here's the choice", txt)
+                                    print("heres the choice ", txt)
+
                                     score = check_answers(idx, txt)
                                     with open(answers, "a") as store:
                                         print("Write to file %d", score)
