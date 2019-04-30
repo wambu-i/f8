@@ -38,7 +38,7 @@ headers = {
 }
 
 graph = "https://graph.facebook.com/v3.2/me/messages?access_token={}"
-__all__ = ['make_response', 'import_questions', 'find_user', 'make_quiz_response', 'check_answers', 'get_index', 'score_answers']
+__all__ = ['make_response', 'import_questions', 'find_user', 'make_quiz_response', 'check_answers', 'get_index', 'score_answers', 'send_message_replies']
 
 _CURRENT_MODULE_ = sys.modules[__name__]
 
