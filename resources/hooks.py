@@ -70,6 +70,7 @@ def worker_messaging():
 
                                     if idx == 4:
                                         score_answers(sender_id, PAT)
+                                        make_response(sender_id, 'quick', 'continue', PAT)
                                         continue
 
                                     score = check_answers(idx, txt)
@@ -83,8 +84,10 @@ def worker_messaging():
                                     make_quiz_response(sender_id, idx + 1 , PAT)
                                 elif txt == 'guides':
                                     send_guide_options(sender_id, PAT)
+                                    make_response(sender_id, 'quick', 'continue', PAT)
                                 elif txt == 'categories':
                                     send_export_categories(sender_id, PAT)
+                                    make_response(sender_id, 'quick', 'continue', PAT)
                             else:
                                 make_response(sender_id, 'quick', 'introduction', PAT)
 
