@@ -67,7 +67,7 @@ def worker_messaging():
 
                                     idx = get_index()
 
-                                    if idx == 2:
+                                    if idx == 7:
                                         score_answers()
 
 
