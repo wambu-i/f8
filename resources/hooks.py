@@ -67,9 +67,8 @@ def worker_messaging():
 
                                     idx = get_index()
 
-                                    if idx == 7:
-                                        score_answers()
-
+                                    if idx == 25:
+                                        score_answers(sender_id, PAT)
 
                                     score = check_answers(idx, txt)
                                     with open(answers, "a") as store:

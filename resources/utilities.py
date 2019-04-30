@@ -272,7 +272,7 @@ def check_answers(idx, ans):
 
 	return score
 
-def score_answers():
+def score_answers(_id, token):
 	final = 0
 	answered = []
 	with open(ans_path, "r") as answers:
@@ -286,7 +286,7 @@ def score_answers():
 		final += int(score.strip('\n'))
 
 	message = "You scored {}".format(final)
-	logger.info(message)
+	send_message_replies(_id, message, token)
 
 def get_index():
 	idx = None
