@@ -48,6 +48,7 @@ def worker_messaging():
                                 make_response(sender_id, 'message', 'greeting', PAT)
                                 make_response(sender_id, 'quick', 'introduction', PAT)
 
+
                         if (msg.get('message')):
                             received = msg['message']
                             if (received.get('quick_reply', None)):
@@ -55,10 +56,10 @@ def worker_messaging():
                                 print("Here's the text ", txt)
                                 if txt == 'quiz':
                                     print("Creating quiz!")
-                                    with open(answers, "r") as store:
+                                    with open(answers, "w") as store:
                                         store.close()
                                     make_quiz_response(sender_id, idx, PAT)
-                                    with open(answers, "w") as xx:
+                                    with open(answers, "r") as xx:
                                         lines = xx.readlines()
                                         print(lines)
 
