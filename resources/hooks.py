@@ -86,8 +86,6 @@ def worker_messaging():
                                                 "url": "https://f8-2019.firebaseapp.com/guide",
                                                 "title": "Open the guide",
                                                 "webview_height_ratio": "tall",
-                                                "messenger_extensions": "false",
-                                                "fallback_url": "https://agoa.org"
                                             }
                                         ], PAT
                                         )
