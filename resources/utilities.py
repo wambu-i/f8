@@ -35,7 +35,7 @@ en_reviews = [
 
 fr_reviews = [
 	"Votre entreprise semble comprendre l’engagement, stratégies et ressources nécessaires pour réussir à exporter. En tout cas, vous avez une base pour commencer à exporter aux États-Unis.",
-	"Votre entreprise a un intérêt sérieux à exporter, mais il existe quelques faiblesses dans votre stratégie d’exportation que vous devriez aborder si vous voulez que votre stratégie d'exportation réussisse. Une considération attentive devrait être donnée, en particulier aux questions que vous avez marqué faible avant de se lancer dans une stratégie d'exportation ambitieuse."
+	"Votre entreprise a un intérêt sérieux à exporter, mais il existe quelques faiblesses dans votre stratégie d’exportation que vous devriez aborder si vous voulez que votre stratégie d'exportation réussisse. Une considération attentive devrait être donnée, en particulier aux questions que vous avez marqué faible avant de se lancer dans une stratégie d'exportation ambitieuse.",
 	"Votre entreprise est très faible en termes de préparation à l’exportation et doit faire beaucoup plus pour se préparer au marché américain. Il y a faiblesses considérables, et si elles ne sont pas abordées, il est hautement peu probable que votre stratégie d'exportation soit couronnée de succès."
 ]
 
