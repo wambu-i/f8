@@ -276,14 +276,15 @@ def score_answers():
 	score = 0
 	answered = []
 	with open(ans_path, "r") as answers:
-		line = answers.readlines()
-		logger.info(line)
+		lines = answers.readlines()
 		answers.close()
-	logger.info(answered)
-	for i in range(len(answered)):
-		score += int(answered[i].strip('\n'))
+	logger.info()
+	for i in range(len(lines)):
+		score = lines[i].split(" ")[1]
+		logger.info(score)
+		final += int(score.strip('\n'))
 
-	message = "You scored {}".format(score)
+	message = "You scored {}".format(final)
 	logger.info(message)
 
 def get_index():
