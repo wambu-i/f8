@@ -3,8 +3,8 @@ import json
 import requests
 import os
 from . import bot
-from .utilities import (import_questions, make_response, make_quiz_response, 
-    find_user, check_answers, get_index, send_export_categories, 
+from .utilities import (import_questions, make_response, make_quiz_response,
+    find_user, check_answers, get_index, send_export_categories,
     send_guide_options, score_answers, send_message_replies)
 
 PAT = os.environ.get('PAT', None)
@@ -56,7 +56,7 @@ def worker_messaging():
                                 make_response(sender_id, 'message', 'greeting', PAT)
                                 make_response(sender_id, 'message', 'description', PAT)
                                 make_response(sender_id, 'quick', 'introduction', PAT)
-                                make_response(sender_id, 'quick', 'location', PAT)
+                                # make_response(sender_id, 'quick', 'location', PAT)
 
 
                         if (msg.get('message')):
