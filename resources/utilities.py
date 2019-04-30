@@ -512,15 +512,15 @@ def score_answers(_id, token):
 	rev = None
 
 	if final > 18:
-		rev = reviews[0]
+		rev = en_reviews[0]
 		if language == "fr":
 			rev = fr_reviews[0]
 	elif final > 17 and final < 10:
-		rev = reviews[1]
+		rev = en_reviews[1]
 		if language == "fr":
 			rev = fr_reviews[1]
 	else:
-		rev = reviews[2]
+		rev = en_reviews[2]
 		if language == "fr":
 			rev = fr_reviews[2]
 
