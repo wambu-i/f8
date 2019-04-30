@@ -201,7 +201,7 @@ def send_quick_replies(_id, txt, msg, token):
 
 
 def send_guide_options(id, token):
-    language = get_language(_id, token)[:2]
+    language = get_language(id, token)[:2]
     send_carousel(id, [
             {
                 "title": "1. Prepare to export",
@@ -291,8 +291,8 @@ def send_guide_options(id, token):
 		], token)
 
 def send_export_categories(id, token):
-    language = get_language(_id, token)
-	send_carousel(id,
+    language = get_language(id, token)[:2]
+    send_carousel(id,
                [
                    {
                        "title": "Apparel Manufacturing",
