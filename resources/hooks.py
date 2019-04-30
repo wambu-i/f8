@@ -3,7 +3,7 @@ import json
 import requests
 import os
 from . import bot
-from .utilities import (import_questions, make_response, make_quiz_response, find_user, check_answers, get_index, send_carousel, send_postback_replies)
+from .utilities import (import_questions, make_response, make_quiz_response, find_user, check_answers, get_index, send_carousel, send_postback_replies, score_answers)
 
 PAT = os.environ.get('PAT', None)
 verify_token = os.environ.get('VERIFY_TOKEN', None)
@@ -65,8 +65,10 @@ def worker_messaging():
                                 elif txt in letters:
                                     print("heres the choice ", txt)
 
-                                    if get_index() is not None:
-                                        idx = get_index()
+                                    idx = get_index()
+
+                                    if idx = 5:
+
 
                                     score = check_answers(idx, txt)
                                     with open(answers, "a") as store:
@@ -75,8 +77,8 @@ def worker_messaging():
                                         store.write(line)
                                         store.close()
                                     #print(answers)
-                                    make_quiz_response(sender_id, idx, PAT)
-                                    
+
+                                    make_quiz_response(sender_id, idx + 1 , PAT)
                                 elif txt == 'guides':
                                     send_postback_replies(
                                         sender_id,
@@ -84,12 +86,11 @@ def worker_messaging():
                                         [
                                             {
                                                 "type": "web_url",
-                                                "url": "f8-2019.firebaseapp.com/guide",
+                                                "url": "https://f8-2019.firebaseapp.com/guide",
                                                 "title": "Open the guide",
                                                 "webview_height_ratio": "tall",
-                                                "messenger_extensions": "false",
-                                                "fallback_url": "agoa.org"
-                                            }]
+                                            }
+                                        ], PAT
                                         )
                                 elif txt == 'categories':
                                     send_carousel(sender_id,
@@ -179,11 +180,11 @@ def worker_messaging():
                                                               }
                                                           ]
                                                       },
-                                                  ]
-                                                  )
+                                                  ],
+                                                  PAT)
 
                             else:
-                                pass
+                                make_response(sender_id, 'quick', 'introduction', PAT)
 
     except Exception as e:
         raise e
