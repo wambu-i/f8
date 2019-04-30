@@ -36,8 +36,6 @@ def worker_messaging():
                 for msg in message['messaging']:
                     print(msg)
                     idx = None
-                    if get_index() is not None:
-                        idx = get_index()
                     print("Index is ", idx)
 
                     if (msg.get('message')) or  (msg.get('postback')):
@@ -66,6 +64,9 @@ def worker_messaging():
 
                                 elif txt in letters:
                                     print("heres the choice ", txt)
+
+                                    if get_index() is not None:
+                                        idx = get_index()
 
                                     score = check_answers(idx, txt)
                                     with open(answers, "a") as store:
