@@ -279,7 +279,7 @@ def score_answers():
 		line = answers.readlines()
 		logger.info(line)
 		answered.append(line)
-	print(answered)
+	logger.info(answered)
 	for i in range(len(answered)):
 		pass
 
