@@ -201,18 +201,19 @@ def send_quick_replies(_id, txt, msg, token):
 
 
 def send_guide_options(id, token):
+    language = get_language(_id, token)[:2]
 	send_carousel(id, [
             {
                 "title": "1. Prepare to export",
                 "default_action": {
                     "type": "web_url",
-                    "url": "f8-2019.firebaseapp.com/guide/export",
+                    "url": "https://f8-2019.firebaseapp.com/{}/guide/export".format(language),
                     "webview_height_ratio": "tall",
                 },
                 "buttons": [
                     {
                         "type": "web_url",
-                        "url": "f8-2019.firebaseapp.com/guide/export",
+                        "url": "https://f8-2019.firebaseapp.com/{}/guide/export".format(language),
                         "title": "Learn more"
                     }
                 ]
@@ -220,13 +221,13 @@ def send_guide_options(id, token):
                 "title": "2. Making the deal",
                 "default_action": {
                     "type": "web_url",
-                    "url": "f8-2019.firebaseapp.com/guide/deal",
+                    "url": "https://f8-2019.firebaseapp.com/{}/guide/deal".format(language),
                     "webview_height_ratio": "tall",
                 },
                 "buttons": [
                     {
                         "type": "web_url",
-                        "url": "f8-2019.firebaseapp.com/guide/deal",
+                        "url": "https://f8-2019.firebaseapp.com/{}/guide/deal".format(language),
                         "title": "Learn more"
                     }
                 ]
@@ -234,13 +235,13 @@ def send_guide_options(id, token):
                 "title": "3. Arranging the shipment",
                 "default_action": {
                     "type": "web_url",
-                    "url": "f8-2019.firebaseapp.com/guide/shipment",
+                    "url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
                     "webview_height_ratio": "tall",
                 },
                 "buttons": [
                     {
                         "type": "web_url",
-                        "url": "f8-2019.firebaseapp.com/guide/shipment",
+                        "url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
                         "title": "Learn more"
                     }
                 ]
@@ -248,13 +249,13 @@ def send_guide_options(id, token):
                 "title": "4. Exporting to the U.S.",
                 "default_action": {
                     "type": "web_url",
-                    "url": "f8-2019.firebaseapp.com/guide/export_us",
+                    "url": "https://f8-2019.firebaseapp.com/{}/guide/export_us".format(language),
                     "webview_height_ratio": "tall",
                 },
                 "buttons": [
                     {
                         "type": "web_url",
-                        "url": "f8-2019.firebaseapp.com/guide/export_us",
+                        "url": "https://f8-2019.firebaseapp.com/{}/guide/export_us".format(language),
                         "title": "Learn more"
                     }
                 ]
@@ -262,13 +263,13 @@ def send_guide_options(id, token):
                 "title": "5. Getting paid",
                 "default_action": {
                     "type": "web_url",
-                    "url": "f8-2019.firebaseapp.com/guide/payment",
+                    "url": "https://f8-2019.firebaseapp.com/{}/guide/payment".format(language),
                     "webview_height_ratio": "tall",
                 },
                 "buttons": [
                     {
                         "type": "web_url",
-                        "url": "f8-2019.firebaseapp.com/guide/payment",
+                        "url": "https://f8-2019.firebaseapp.com/{}/guide/payment".format(language),
                         "title": "Learn more"
                     }
                 ]
@@ -276,13 +277,13 @@ def send_guide_options(id, token):
                 "title": "6. Common Bill Errors",
                 "default_action": {
                     "type": "web_url",
-                    "url": "f8-2019.firebaseapp.com/guide/common_bill_errors",
+                    "url": "https://f8-2019.firebaseapp.com/{}/guide/common_bill_errors".format(language),
                     "webview_height_ratio": "tall",
                 },
                 "buttons": [
                     {
                         "type": "web_url",
-                        "url": "f8-2019.firebaseapp.com/guide/common_bill_errors",
+                        "url": "https://f8-2019.firebaseapp.com/{}/guide/common_bill_errors".format(language),
                         "title": "Learn more"
                     }
                 ]
@@ -290,6 +291,7 @@ def send_guide_options(id, token):
 		], token)
 
 def send_export_categories(id, token):
+    language = get_language(_id, token)
 	send_carousel(id,
                [
                    {
@@ -297,13 +299,13 @@ def send_export_categories(id, token):
                        "image_url": "https://agoa.info/images/articles/5183/_thumb4/southafrica_textileworker.jpg",
                        "default_action": {
                            "type": "web_url",
-                           "url": "f8-2019.firebaseapp.com/regulations/apparel",
+                           "url": "https://f8-2019.firebaseapp.com/regulations/apparel",
                            "webview_height_ratio": "tall",
                        },
                        "buttons": [
                            {
                                "type": "web_url",
-                               "url": "f8-2019.firebaseapp.com/regulations/apparel",
+                               "url": "https://f8-2019.firebaseapp.com/regulations/apparel",
                                "title": "View regulations"
                            }
                        ]
@@ -311,16 +313,15 @@ def send_export_categories(id, token):
                    {
                        "title": "Cashews",
                        "image_url": "https://agoa.info/images/articles/5183/_thumb4/southafrica_textileworker.jpg",
-                       #   "subtitle": "We have the right hat for everyone.",
                        "default_action": {
                            "type": "web_url",
-                           "url": "f8-2019.firebaseapp.com/regulations/cashew",
+                           "url": "https://f8-2019.firebaseapp.com/regulations/cashew",
                            "webview_height_ratio": "tall",
                        },
                        "buttons": [
                            {
                                "type": "web_url",
-                               "url": "f8-2019.firebaseapp.com/regulations/cashew",
+                               "url": "https://f8-2019.firebaseapp.com/regulations/cashew",
                                "title": "View regulations"
                            }
                        ]
@@ -328,7 +329,6 @@ def send_export_categories(id, token):
                    {
                        "title": "Coffee",
                        "image_url": "https://agoa.info/images/articles/5156/_thumb4/coffee_tasters_ethiopia600_400.jpg",
-                       #   "subtitle": "We have the right hat for everyone.",
                        "default_action": {
                            "type": "web_url",
                            "url": "https://f8-2019.firebaseapp.com/regulations/coffee",
@@ -345,7 +345,6 @@ def send_export_categories(id, token):
                    {
                        "title": "Foodstuff",
                        "image_url": "https://agoa.info/images/articles/6214/_thumb4/foodagoa.jpg",
-                       #   "subtitle": "We have the right hat for everyone.",
                        "default_action": {
                            "type": "web_url",
                            "url": "https://f8-2019.firebaseapp.com/regulations/foodstuff",
@@ -362,7 +361,6 @@ def send_export_categories(id, token):
                    {
                        "title": "Textiles",
                        "image_url": "https://agoa.info/images/articles/5159/_thumb4/ethiopia_trad_textiles_collage_small.jpg",
-                       #   "subtitle": "We have the right hat for everyone.",
                        "default_action": {
                            "type": "web_url",
                            "url": "https://f8-2019.firebaseapp.com/regulations/textiles",
