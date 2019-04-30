@@ -201,207 +201,207 @@ def send_quick_replies(_id, txt, msg, token):
 
 
 def send_guide_options(id, token):
-    language = get_language(id, token)[:2]
-    send_carousel(id, [
-        {
-            "title": "1. Prepare to export",
-            "default_action": {
-                "type": "web_url",
-                "url": "https://f8-2019.firebaseapp.com/{}/guide/export".format(language),
-                "webview_height_ratio": "tall",
-            },
-            "buttons": [
-                {
-                    "type": "web_url",
-                    "url": "https://f8-2019.firebaseapp.com/{}/guide/export".format(language),
-                    "title": "Learn more"
-                }
-            ]
-        }, {
-            "title": "2. Making the deal",
-            "default_action": {
-                "type": "web_url",
-                "url": "https://f8-2019.firebaseapp.com/{}/guide/deal".format(language),
-                "webview_height_ratio": "tall",
-            },
-            "buttons": [
-                {
-                    "type": "web_url",
-                    "url": "https://f8-2019.firebaseapp.com/{}/guide/deal".format(language),
-                    "title": "Learn more"
-                }
-            ]
-        }, {
-            "title": "3. Arranging the shipment",
-            "default_action": {
-                "type": "web_url",
-                "url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
-                "webview_height_ratio": "tall",
-            },
-            "buttons": [
-                {
-                    "type": "web_url",
-                    "url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
-                    "title": "Learn more"
-                }
-            ]
-        }, {
-            "title": "4. Exporting to the U.S.",
-            "default_action": {
-                "type": "web_url",
-                "url": "https://f8-2019.firebaseapp.com/{}/guide/export_us".format(language),
-                "webview_height_ratio": "tall",
-            },
-            "buttons": [
-                {
-                    "type": "web_url",
-                    "url": "https://f8-2019.firebaseapp.com/{}/guide/export_us".format(language),
-                    "title": "Learn more"
-                }
-            ]
-        }, {
-            "title": "5. Getting paid",
-            "default_action": {
-                "type": "web_url",
-                "url": "https://f8-2019.firebaseapp.com/{}/guide/payment".format(language),
-                "webview_height_ratio": "tall",
-            },
-            "buttons": [
-                {
-                    "type": "web_url",
-                    "url": "https://f8-2019.firebaseapp.com/{}/guide/payment".format(language),
-                    "title": "Learn more"
-                }
-            ]
-        }, {
-            "title": "6. Common Bill Errors",
-            "default_action": {
-                "type": "web_url",
-                "url": "https://f8-2019.firebaseapp.com/{}/guide/common_bill_errors".format(language),
-                "webview_height_ratio": "tall",
-            },
-            "buttons": [
-                {
-                    "type": "web_url",
-                    "url": "https://f8-2019.firebaseapp.com/{}/guide/common_bill_errors".format(language),
-                    "title": "Learn more"
-                }
-            ]
-        }
-    ], token)
+	language = get_language(id, token)[:2]
+	send_carousel(id, [
+		{
+			"title": "1. Prepare to export",
+			"default_action": {
+				"type": "web_url",
+				"url": "https://f8-2019.firebaseapp.com/{}/guide/export".format(language),
+				"webview_height_ratio": "tall",
+			},
+			"buttons": [
+				{
+					"type": "web_url",
+					"url": "https://f8-2019.firebaseapp.com/{}/guide/export".format(language),
+					"title": "Learn more"
+				}
+			]
+		}, {
+			"title": "2. Making the deal",
+			"default_action": {
+				"type": "web_url",
+				"url": "https://f8-2019.firebaseapp.com/{}/guide/deal".format(language),
+				"webview_height_ratio": "tall",
+			},
+			"buttons": [
+				{
+					"type": "web_url",
+					"url": "https://f8-2019.firebaseapp.com/{}/guide/deal".format(language),
+					"title": "Learn more"
+				}
+			]
+		}, {
+			"title": "3. Arranging the shipment",
+			"default_action": {
+				"type": "web_url",
+				"url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
+				"webview_height_ratio": "tall",
+			},
+			"buttons": [
+				{
+					"type": "web_url",
+					"url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
+					"title": "Learn more"
+				}
+			]
+		}, {
+			"title": "4. Exporting to the U.S.",
+			"default_action": {
+				"type": "web_url",
+				"url": "https://f8-2019.firebaseapp.com/{}/guide/export_us".format(language),
+				"webview_height_ratio": "tall",
+			},
+			"buttons": [
+				{
+					"type": "web_url",
+					"url": "https://f8-2019.firebaseapp.com/{}/guide/export_us".format(language),
+					"title": "Learn more"
+				}
+			]
+		}, {
+			"title": "5. Getting paid",
+			"default_action": {
+				"type": "web_url",
+				"url": "https://f8-2019.firebaseapp.com/{}/guide/payment".format(language),
+				"webview_height_ratio": "tall",
+			},
+			"buttons": [
+				{
+					"type": "web_url",
+					"url": "https://f8-2019.firebaseapp.com/{}/guide/payment".format(language),
+					"title": "Learn more"
+				}
+			]
+		}, {
+			"title": "6. Common Bill Errors",
+			"default_action": {
+				"type": "web_url",
+				"url": "https://f8-2019.firebaseapp.com/{}/guide/common_bill_errors".format(language),
+				"webview_height_ratio": "tall",
+			},
+			"buttons": [
+				{
+					"type": "web_url",
+					"url": "https://f8-2019.firebaseapp.com/{}/guide/common_bill_errors".format(language),
+					"title": "Learn more"
+				}
+			]
+		}
+	], token)
 
 
 def send_export_categories(id, token):
-    language = get_language(id, token)[:2]
-    send_carousel(id,
-                  [
-                      {
-                          "title": "Cheese, milk and dairy products",
-                          "default_action": {
-                              "type": "web_url",
-                              "url": "https://f8-2019.firebaseapp.com/{}/regulations/cheese".format(language),
-                              "webview_height_ratio": "tall",
-                          },
-                          "buttons": [
-                              {
-                                  "type": "web_url",
-                                  "url": "https://f8-2019.firebaseapp.com/{}/regulations/cheese".format(language),
-                                  "title": "View regulations"
-                              }
-                          ]
-                      },
-                      {
-                          "title": "Fruits, vegetables and nuts",
-                          "default_action": {
-                              "type": "web_url",
-                              "url": "https://f8-2019.firebaseapp.com/{}/regulations/fruits".format(language),
-                              "webview_height_ratio": "tall",
-                          },
-                          "buttons": [
-                              {
-                                  "type": "web_url",
-                                  "url": "https://f8-2019.firebaseapp.com/{}/regulations/fruits".format(language),
-                                  "title": "View regulations"
-                              }
-                          ]
-                      },
-                      {
-                          "title": "Livestock and animals",
-                          "default_action": {
-                              "type": "web_url",
-                              "url": "https://f8-2019.firebaseapp.com/{}/regulations/livestock".format(language),
-                              "webview_height_ratio": "tall",
-                          },
-                          "buttons": [
-                              {
-                                  "type": "web_url",
-                                  "url": "https://f8-2019.firebaseapp.com/{}/regulations/livestock".format(language),
-                                  "title": "View regulations"
-                              }
-                          ]
-                      },
-                      {
-                          "title": "Meat, poultry, and meat or poultry products",
-                          "default_action": {
-                              "type": "web_url",
-                              "url": "https://f8-2019.firebaseapp.com/{}/regulations/meat".format(language),
-                              "webview_height_ratio": "tall",
-                          },
-                          "buttons": [
-                              {
-                                  "type": "web_url",
-                                  "url": "https://f8-2019.firebaseapp.com/{}/regulations/meat".format(language),
-                                  "title": "View regulations"
-                              }
-                          ]
-                      },
-                      {
-                          "title": "Plant and plant products",
-                          "default_action": {
-                              "type": "web_url",
-                              "url": "https://f8-2019.firebaseapp.com/{}/regulations/plants".format(language),
-                              "webview_height_ratio": "tall",
-                          },
-                          "buttons": [
-                              {
-                                  "type": "web_url",
-                                  "url": "https://f8-2019.firebaseapp.com/{}/regulations/plants".format(language),
-                                  "title": "View regulations"
-                              }
-                          ]
-                      },
-               				   {
-                          "title": "Seeds",
-                          "default_action": {
-                              "type": "web_url",
-                              "url": "https://f8-2019.firebaseapp.com/{}/regulations/seeds".format(language),
-                              "webview_height_ratio": "tall",
-                          },
-                          "buttons": [
-                              {
-                                  "type": "web_url",
-                                  "url": "https://f8-2019.firebaseapp.com/{}/regulations/seeds".format(language),
-                                  "title": "View regulations"
-                              }
-                          ]
-                      },
-                  ],
-                  token)
+	language = get_language(id, token)[:2]
+	send_carousel(id,
+				  [
+					  {
+						  "title": "Cheese, milk and dairy products",
+						  "default_action": {
+							  "type": "web_url",
+							  "url": "https://f8-2019.firebaseapp.com/{}/regulations/cheese".format(language),
+							  "webview_height_ratio": "tall",
+						  },
+						  "buttons": [
+							  {
+								  "type": "web_url",
+								  "url": "https://f8-2019.firebaseapp.com/{}/regulations/cheese".format(language),
+								  "title": "View regulations"
+							  }
+						  ]
+					  },
+					  {
+						  "title": "Fruits, vegetables and nuts",
+						  "default_action": {
+							  "type": "web_url",
+							  "url": "https://f8-2019.firebaseapp.com/{}/regulations/fruits".format(language),
+							  "webview_height_ratio": "tall",
+						  },
+						  "buttons": [
+							  {
+								  "type": "web_url",
+								  "url": "https://f8-2019.firebaseapp.com/{}/regulations/fruits".format(language),
+								  "title": "View regulations"
+							  }
+						  ]
+					  },
+					  {
+						  "title": "Livestock and animals",
+						  "default_action": {
+							  "type": "web_url",
+							  "url": "https://f8-2019.firebaseapp.com/{}/regulations/livestock".format(language),
+							  "webview_height_ratio": "tall",
+						  },
+						  "buttons": [
+							  {
+								  "type": "web_url",
+								  "url": "https://f8-2019.firebaseapp.com/{}/regulations/livestock".format(language),
+								  "title": "View regulations"
+							  }
+						  ]
+					  },
+					  {
+						  "title": "Meat, poultry, and meat or poultry products",
+						  "default_action": {
+							  "type": "web_url",
+							  "url": "https://f8-2019.firebaseapp.com/{}/regulations/meat".format(language),
+							  "webview_height_ratio": "tall",
+						  },
+						  "buttons": [
+							  {
+								  "type": "web_url",
+								  "url": "https://f8-2019.firebaseapp.com/{}/regulations/meat".format(language),
+								  "title": "View regulations"
+							  }
+						  ]
+					  },
+					  {
+						  "title": "Plant and plant products",
+						  "default_action": {
+							  "type": "web_url",
+							  "url": "https://f8-2019.firebaseapp.com/{}/regulations/plants".format(language),
+							  "webview_height_ratio": "tall",
+						  },
+						  "buttons": [
+							  {
+								  "type": "web_url",
+								  "url": "https://f8-2019.firebaseapp.com/{}/regulations/plants".format(language),
+								  "title": "View regulations"
+							  }
+						  ]
+					  },
+							   {
+						  "title": "Seeds",
+						  "default_action": {
+							  "type": "web_url",
+							  "url": "https://f8-2019.firebaseapp.com/{}/regulations/seeds".format(language),
+							  "webview_height_ratio": "tall",
+						  },
+						  "buttons": [
+							  {
+								  "type": "web_url",
+								  "url": "https://f8-2019.firebaseapp.com/{}/regulations/seeds".format(language),
+								  "title": "View regulations"
+							  }
+						  ]
+					  },
+				  ],
+				  token)
 
 
 def send_carousel(id, payload, token):
 	data = json.dumps({
 "recipient":{
-    "id": id
+	"id": id
   },
   "message":{
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"generic",
-        "elements": payload
-      }
-    }
+	"attachment":{
+	  "type":"template",
+	  "payload":{
+		"template_type":"generic",
+		"elements": payload
+	  }
+	}
   }
 		})
 
@@ -435,24 +435,24 @@ def send_postback_replies(_id, txt, buttons, token):
 		logger.error('{} :{}'.format(r.status_code, r.text))
 
 def import_questions(path):
-    questions = {}
-    try:
-        with open(path, "r") as store:
-            questions = json.load(store)
-            store.close()
-    except (IOError, OSError):
-        return None
+	questions = {}
+	try:
+		with open(path, "r") as store:
+			questions = json.load(store)
+			store.close()
+	except (IOError, OSError):
+		return None
 
-    return questions
+	return questions
 
 
 def find_user(id, token):
-    headers = {
-    'Content-Type' : 'application/json'
-    }
-    r = requests.get('https://graph.facebook.com/v3.2/' + id + '?fields=first_name,last_name&access_token=' + token , headers = headers)
-    nm = r.json()
-    return nm['first_name']
+	headers = {
+	'Content-Type' : 'application/json'
+	}
+	r = requests.get('https://graph.facebook.com/v3.2/' + id + '?fields=first_name,last_name&access_token=' + token , headers = headers)
+	nm = r.json()
+	return nm['first_name']
 
 def get_language(id, token):
 	headers = {
@@ -462,7 +462,7 @@ def get_language(id, token):
 	r = requests.get('https://graph.facebook.com/v3.2/' + id + '?fields=locale&access_token=' + token, headers = headers)
 	nm = r.json()
 	print(nm)
-	return nm['locale']
+	return nm['locale'][:2]
 
 def handle_quiz(_id, token, idx):
 	logger.info(idx)
