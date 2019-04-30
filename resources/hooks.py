@@ -58,7 +58,7 @@ def worker_messaging():
                                     with open(answers, "r") as store:
                                         store.close()
                                     make_quiz_response(sender_id, idx, PAT)
-                                    with open(answers, "r") as xx:
+                                    with open(answers, "w") as xx:
                                         lines = xx.readlines()
                                         print(lines)
 
@@ -69,6 +69,7 @@ def worker_messaging():
 
                                     if idx == 4:
                                         score_answers(sender_id, PAT)
+                                        continue
 
                                     score = check_answers(idx, txt)
                                     with open(answers, "a") as store:
