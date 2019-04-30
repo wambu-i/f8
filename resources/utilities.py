@@ -353,7 +353,7 @@ def send_export_categories(id, token):
                        "buttons": [
                            {
                                "type": "web_url",
-                               "url": "https://f8-2019.firebaseapp.com/regulations/foodstuff?locale={}".format(locale),
+                               "url": "https://f8-2019.firebaseapp.com/regulations/foodstuff",
                                "title": "View regulations"
                            }
                        ]
