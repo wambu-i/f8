@@ -31,7 +31,7 @@ en_reviews = [
 "Your company would seem to understand the commitment, strategies and resources needed to be a successful exporter. At the very least, you have a basis for beginning to export to the U.S.",
 "Your company has a serious interest in exporting, but there are some areas of weakness in your export strategy that you should address if you want your export strategy to succeed. Careful consideration should be given, particularly to those questions that you scored low on, before embarking on an ambitious export strategy.",
 "Your company is very weak in terms of preparing to export, and needs to do much more to ready itself for the U.S. market. There are considerable weaknesses, and if they are not addressed, it is highly unlikely that your export strategy will be successful."
-] 
+]
 
 fr_reviews = [
 	"Votre entreprise semble comprendre l’engagement, stratégies et ressources nécessaires pour réussir à exporter. En tout cas, vous avez une base pour commencer à exporter aux États-Unis.",
@@ -213,13 +213,13 @@ def send_guide_options(id, token):
 			"title": "1. Prepare to export",
 			"default_action": {
 				"type": "web_url",
-				"url": "https://f8-2019.firebaseapp.com/{}/guide/prepare".format(language),
+				"url": "https://f8-2019.firebaseapp.com/{}/guides/prepare".format(language),
 				"webview_height_ratio": "tall",
 			},
 			"buttons": [
 				{
 					"type": "web_url",
-					"url": "https://f8-2019.firebaseapp.com/{}/guide/prepare".format(language),
+					"url": "https://f8-2019.firebaseapp.com/{}/guides/prepare".format(language),
 					"title": "Learn more"
 				}
 			]
@@ -227,27 +227,27 @@ def send_guide_options(id, token):
 			"title": "2. Making the deal",
 			"default_action": {
 				"type": "web_url",
-				"url": "https://f8-2019.firebaseapp.com/{}/guide/deal".format(language),
+				"url": "https://f8-2019.firebaseapp.com/{}/guides/deal".format(language),
 				"webview_height_ratio": "tall",
 			},
 			"buttons": [
 				{
 					"type": "web_url",
-					"url": "https://f8-2019.firebaseapp.com/{}/guide/deal".format(language),
+					"url": "https://f8-2019.firebaseapp.com/{}/guides/deal".format(language),
 					"title": "Learn more"
 				}
 			]
 		}, {
-			"title": "3. Arranging the shipment",
+			"title": "3. Packaging and Labelling",
 			"default_action": {
 				"type": "web_url",
-				"url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
+				"url": "https://f8-2019.firebaseapp.com/{}/guides/packaging".format(language),
 				"webview_height_ratio": "tall",
 			},
 			"buttons": [
 				{
 					"type": "web_url",
-					"url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
+					"url": "https://f8-2019.firebaseapp.com/{}/guides/packaging".format(language),
 					"title": "Learn more"
 				}
 			]
@@ -505,7 +505,7 @@ def score_answers(_id, token):
 		final += int(score.strip('\n'))
 
 	message = "You scored {}".format(final)
-	
+
 	if language == "fr":
 		message = "Tu as marqué {} points".format(final)
 
