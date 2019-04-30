@@ -12,6 +12,11 @@
 		"text": "Do you need any more help?",
 		"options" : ["Take AGOA Quiz", "Readiness Guides", "Export Categories"],
 		"payload": ["quiz", "guides", "categories"]
+	},
+	"location": {
+		"text": "What country do you come from?",
+		"options": ["Kenya", "Sierra Leone", "Zambia", "Mozambique", "Togo"],
+		"payload": ["Kenya", "Sierra Leone", "Zambia", "Mozambique", "Togo"]
 	}
 }
 	
