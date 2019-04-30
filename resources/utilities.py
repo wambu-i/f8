@@ -507,7 +507,7 @@ def score_answers(_id, token):
 	message = "You scored {}".format(final)
 	
 	if language == "fr":
-		message = "Tu as marqué {} points".format(points)
+		message = "Tu as marqué {} points".format(final)
 
 	rev = None
 
