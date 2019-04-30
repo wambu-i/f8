@@ -76,6 +76,8 @@ def worker_messaging():
                                     #print(answers)
 
                                     make_quiz_response(sender_id, idx + 1 , PAT)
+                            else:
+                                make_response(sender_id, 'quick', 'introduction', PAT)
 
 
     except Exception as e:
