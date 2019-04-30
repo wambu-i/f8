@@ -344,13 +344,13 @@ def send_guide_options(id, token):
 				"title": "4. Arrange shipment",
 				"default_action": {
 					"type": "web_url",
-					"url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
+					"url": "https://f8-2019.firebaseapp.com/{}/guides/shipment".format(language),
 					"webview_height_ratio": "tall",
 				},
 				"buttons": [
 					{
 						"type": "web_url",
-						"url": "https://f8-2019.firebaseapp.com/{}/guide/shipment".format(language),
+						"url": "https://f8-2019.firebaseapp.com/{}/guides/shipment".format(language),
 						"title": "Learn more"
 					}
 				]
@@ -358,13 +358,13 @@ def send_guide_options(id, token):
 				"title": "5. Getting paid",
 				"default_action": {
 					"type": "web_url",
-					"url": "https://f8-2019.firebaseapp.com/{}/guide/payment".format(language),
+					"url": "https://f8-2019.firebaseapp.com/{}/guides/payment".format(language),
 					"webview_height_ratio": "tall",
 				},
 				"buttons": [
 					{
 						"type": "web_url",
-						"url": "https://f8-2019.firebaseapp.com/{}/guide/payment".format(language),
+						"url": "https://f8-2019.firebaseapp.com/{}/guides/payment".format(language),
 						"title": "Learn more"
 					}
 				]
@@ -372,13 +372,13 @@ def send_guide_options(id, token):
 				"title": "6. Common Bill Errors",
 				"default_action": {
 					"type": "web_url",
-					"url": "https://f8-2019.firebaseapp.com/{}/guide/common_bill_errors".format(language),
+					"url": "https://f8-2019.firebaseapp.com/{}/guides/common-bill-errors".format(language),
 					"webview_height_ratio": "tall",
 				},
 				"buttons": [
 					{
 						"type": "web_url",
-						"url": "https://f8-2019.firebaseapp.com/{}/guide/common_bill_errors".format(language),
+						"url": "https://f8-2019.firebaseapp.com/{}/guides/common-bill-errors".format(language),
 						"title": "Learn more"
 					}
 				]
@@ -452,7 +452,7 @@ def send_export_categories(id, token):
 							]
 						},
 						{
-							"title": "Plantes et produits de plantes",
+							"title": "Plantes et produits de plantes	",
 							"default_action": {
 								"type": "web_url",
 								"url": "https://f8-2019.firebaseapp.com/{}/regulations/plants".format(language),
