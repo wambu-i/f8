@@ -65,8 +65,7 @@ def worker_messaging():
                                 elif txt in letters:
                                     print("heres the choice ", txt)
 
-                                    if get_index() is not None:
-                                        idx = get_index()
+                                    idx = get_index()
 
                                     score = check_answers(idx, txt)
                                     with open(answers, "a") as store:
@@ -75,7 +74,8 @@ def worker_messaging():
                                         store.write(line)
                                         store.close()
                                     #print(answers)
-                                    make_quiz_response(sender_id, idx, PAT)
+
+                                    make_quiz_response(sender_id, idx + 1 , PAT)
 
 
     except Exception as e:
