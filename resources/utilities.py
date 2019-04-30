@@ -493,7 +493,7 @@ def check_answers(_id, token, idx, ans):
 def score_answers(_id, token):
 	final = 0
 	answered = []
-	language = get_language()
+	language = get_language(_id, token)
 	with open(ans_path, "r") as answers:
 		lines = answers.readlines()
 		answers.close()
