@@ -278,7 +278,8 @@ def score_answers():
 	with open(ans_path, "r") as answers:
 		lines = answers.readlines()
 		answers.close()
-	logger.info()
+		logger.info(lines)
+		
 	for i in range(len(lines)):
 		score = lines[i].split(" ")[1]
 		logger.info(score)
