@@ -14,7 +14,6 @@ booleans = ["Yes", "No"]
 
 # Create logger instance
 logger = logging.getLogger('api')
-quiz_path = os.path.abspath("agoa.json")
 resp_path = os.path.abspath("responses.json")
 ans_path = os.path.abspath("answers.txt")
 
@@ -92,7 +91,7 @@ def make_response(_id, t, k, token, **kwargs):
 	return True
 
 def make_quiz_response(_id, idx, token):
-	question = handle_quiz(idx)
+	question = handle_quiz(_id, token, idx)
 	if not question:
 		return False
 	choices = question.get("choices", None)
@@ -351,7 +350,7 @@ def send_export_categories(id, token):
                        "buttons": [
                            {
                                "type": "web_url",
-                               "url": "https://f8-2019.firebaseapp.com/regulations/foodstuff",
+                               "url": "https://f8-2019.firebaseapp.com/regulations/foodstuff?locale={}".format(locale),
                                "title": "View regulations"
                            }
                        ]
@@ -422,10 +421,10 @@ def send_postback_replies(_id, txt, buttons, token):
 	else:
 		logger.error('{} :{}'.format(r.status_code, r.text))
 
-def import_questions():
+def import_questions(path):
     questions = {}
     try:
-        with open(quiz_path, "r") as store:
+        with open(path, "r") as store:
             questions = json.load(store)
             store.close()
     except (IOError, OSError):
@@ -442,10 +441,20 @@ def find_user(id, token):
     nm = r.json()
     return nm['first_name']
 
+def get_language(id, token):
+	headers = {
+		'Content-Type' : 'application/json'
+	}
 
-def handle_quiz(idx):
+	r = requests.get('https://graph.facebook.com/v3.2/' + id + '?fields=locale&access_token=' + token, headers = headers)
+	nm = r.json()
+	return nm['locale']
+
+def handle_quiz(_id, token, idx):
 	logger.info(idx)
-	questions = import_questions()
+	language = get_language(_id, token)
+	path = language + "_agoa.json"
+	questions = import_questions(path)
 	question = questions.get(str(idx + 1), None)
 	return question
 

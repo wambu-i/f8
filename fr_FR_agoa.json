@@ -1,0 +1,250 @@
+{
+  "1": {
+    "question": "Quel(s) produit(s) / service(s) votre entreprise offre-t-elle ?",
+    "choices": [
+      "Biens de consommation vendus rapidement (par exemple, aliments, boissons, produits de confiserie)",
+      "Biens de consommation durables (meubles, chaîne hi-fi, appareils électroménagers, par exemple)",
+      "Consommables industriels ou biens durables (par exemple, matières premières, composants, machines, etc.)",
+      "Services (financiers, créatifs, formation)"
+    ],
+    "answers": [3, 3, 3, 3],
+    "info": {
+      "text": "secteurs de l'AGOA",
+      "link": "https://agoa.info/toolkit/industry-sectors.html"
+    }
+  },
+  "2": {
+    "question": "Combien de temps avez-vous été dans le business ?",
+    "choices": [
+      "Plus de 15 ans",
+      "Moins d'un an",
+      "Entre un et trois ans",
+      "Plus de trois ans"
+    ],
+    "answers": [5, 0, 1, 3],
+  },
+  "3": {
+    "question": "La tendance des ventes et des demandes est-elle à la hausse ou à la baisse ?",
+    "choice": ["à la hausse", "à la baisse", "À peu près pareil", "Je ne sais pas"],
+    "answers": [5, 0, 1, 0]
+  },
+  "4": {
+    "question": "Combien de bureaux de vente, de points de vente ou de points de distribution votre entreprise a-t-elle ?",
+    "choices": [
+      "Un ou plusieurs bureaux nationaux et au moins un bureau étranger",
+      "Un",
+      "Deux",
+      "Plus que deux"
+    ],
+    "answers": [5, 0, 1, 3]
+  },
+  "5": {
+    "question": "Pour quel intervalle de temps le business plan de votre entreprise est-il ?",
+    "choices": ["Six mois", "Un an", "Trois ans", "Pas de plan d'affaires"],
+    "answers": [-30, 1, 4, -50],
+	"info": {
+      "text": "Instructions sur les business plans",
+      "link": "https://agoa.info/images/documents/5179/Business%20planning%20Instruction%20and%20Business%20Plan%20Template%20(VEGA).pdf"
+    }
+  },
+  "6": {
+    "question": "Avez-vous déjà exporté ?",
+    "choices": [
+      "Oui",
+      "Non"
+    ],
+    "answers": [5, 0]
+  },
+  "7": {
+    "question": "Combien de temps votre entreprise va-t-elle consacrer à la planification des exportations ?",
+    "choices": [
+      "Des efforts de planification considérables (de trois à six mois)",
+      "Certains (un à deux mois)",
+      "Minime (moins d'un mois)",
+      "Je ne sais pas"
+    ],
+    "answers": [7, 1, -15, -15]
+	},
+  	"info": {
+      "text": "Planification de l'export aux États-Unis",
+      "link": "https://agoa.info/images/documents/5176/Exporting%20to%20the%20US%20-%20A%20guide%20to%20small%20foreign%20exporters.pdf"
+    }
+  },
+  "8": {
+    "question": "Dans quel délai la direction s'attend-elle à ce que les opérations d'exportation deviennent autonomes ?",
+    "choices": [
+      "Trois ans",
+      "Immédiatement",
+      "Six mois",
+      "Je ne sais pas"
+    ],
+    "answers": [-2, 1, 2, -0]
+  },
+  "9": {
+    "question": "La direction de votre entreprise a-t-elle alloué (ou réaffecté) des ressources à l'effort d'exportation ?",
+    "choices": [
+      "Personnel supplémentaire affecté uniquement",
+      "Ressources financières supplémentaires allouées",
+      "Ressources humaines et financières allouées",
+      "Aucune ressource supplémentaire ne sera allouée"
+    ],
+    "answers": [2, 3, 5, 0]
+  },
+  "10": {
+    "question": "Lesquelles des barrières à l’entrée sur le marché américain suivantes avez-vous recherchées ?",
+    "choices": [
+      "Barrières tarifaires et non tarifaires",
+      "Normes internationales",
+      "Modification du produit",
+      "Tout ce qui précède"
+    ],
+    "answers": [0, 0, 0, 5]
+  },
+  "11": {
+    "question": "Lorsque vous avez défini le prix américain de votre produit / service, qu'est-ce que vous avez pris en considération ?",
+    "choices": [
+      "Frais seulement",
+      "Demande du marché et coûts seulement",
+      "Concurrence et coûts seulement",
+      "Tout ce qui précède"
+    ],
+    "answers": [0, 0, 0, 5]
+  },
+  "12": {
+    "question": "Avez-vous choisi le mode de paiement que vous préférez pour vos devis d'exportation ?",
+    "choices": [
+      "Oui",
+      "Non"
+    ],
+    "answers": [2, 0]
+  },
+  "13": {
+    "question": "Que comprennent vos analyses du marché américain ?",
+    "choices": [
+      "Structure",
+      "Part de marché et taille",
+      "Aucune de ces answers",
+      "Tout ce qui précède"
+    ],
+    "answers": [1, 1, 0, 5]
+  },
+  "14": {
+    "question": "Avez-vous choisi les canaux de distribution que vous utiliserez aux États-Unis ?",
+    "choices": [
+      "Oui",
+      "Non",
+    ],
+    "answers": [3, 0],
+    "info": {
+      "text": "Directives de stratégies de distribution",
+      "link": "https://agoa.info/toolkit/exporter-resources/national-agoa-strategies.html"
+  },
+  "15": {
+    "question": "Avez-vous une idée claire de la combinaison de méthodes promotionnelles qui seront utilisées aux États-Unis ?",
+    "choices": [
+      "Oui",
+      "Non"
+    ],
+    "answers": [3, 0],
+    "info": {
+      "text": "Directives promotionnelles par pays",
+      "link": "https://agoa.info/sector-associations-africa.html"
+  },
+  "16": {
+    "question": "Avez-vous du matériel promotionnel en anglais ?",
+    "choices": [
+      "Oui",
+      "Non"
+    ],
+    "answers": [5, 0]
+  },
+  "17": {
+    "question": "Avez-vous un site web en anglais ?",
+    "choices": [
+      "Oui",
+      "Non"
+    ],
+    "answers": [5, 0]
+  },
+  "18": {
+    "question": "Avec combien de pays avez-vous mené des affaires ?",
+    "choices": [
+      "Aucun",
+      "Un",
+      "Entre deux et trois",
+      "Plus que trois"
+    ],
+    "answers": [0, 1, 2, 3]
+  },
+  "19": {
+    "question": "Avez-vous déjà discuté de l’exportation aux États-Unis avec d’autres entreprises ayant déjà de l’expérience sur le marché américain ?",
+    "choices": [
+      "Oui",
+      "Non"
+    ],
+    "answers": [5, 0]
+  },
+  "20": {
+    "question": "Avez-vous participé à des salons professionnels internationaux aux États-Unis ?",
+    "choices": [
+      "Jamais",
+      "Une fois en tant que participant",
+      "Deux et plus en tant que participant",
+      "Plus d'une fois en tant que participant et au moins une fois en tant qu'exposant"
+    ],
+    "answers": [0, 1, 2, 5],
+    "info": {
+      "text": "Directives pour la participation à des foires commerciales",
+      "link": "https://agoa.info/images/documents/5172/Guidelines%20for%20tradeshow%20participation.pdf"
+    }
+  },
+  "21": {
+    "question": "Quelle est l'expérience de votre personnel en commerce international, théoriquement et / ou dans la pratique ?",
+    "choices": [
+      "Aucun",
+      "Quantité modérée",
+      "Quantité considérable",
+      "Je ne sais pas"
+    ],
+    "answers": [1, 2, 3, 0]
+  },
+  "22": {
+    "question": "Lesquels des employés de votre entreprise parlent anglais ?",
+    "choices": [
+      "Top management only",
+      "Middle management et A",
+      "Personnel administratif et A et B",
+      "Aucune de ces answers"
+    ],
+    "answers": [2, 3, 4, 0]
+  },
+  "23": {
+    "question": "Votre entreprise a-t-elle réussi à obtenir un prêt bancaire au cours des 10 dernières années ?",
+    "choices": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "answers": [5, 0, 0]
+  },
+  "24": {
+    "question": "Quel mode de paiement considérez-vous le moins sécurisé ?",
+    "choices": [
+      "Compte ouvert",
+      "Paiement en avance",
+      "Lettre de crédit",
+      "Collection documentaire"
+    ],
+    "answers": [5, 0, 0, 0]
+  },
+  "25": {
+    "question": "Comment votre entreprise utilise-t-elle la méthode de communication par e-mail ?",
+    "choices": [
+      "Communication externe uniquement.",
+      "Communication interne uniquement.",
+      "Les deux comme méthode de communication interne et externe",
+      "Pas du tout utilisée"
+    ],
+    "answers": [2, 2, 5, 0]
+  }
+}

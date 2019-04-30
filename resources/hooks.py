@@ -3,7 +3,9 @@ import json
 import requests
 import os
 from . import bot
-from .utilities import (import_questions, make_response, make_quiz_response, find_user, check_answers, get_index, send_export_categories, send_guide_options, score_answers)
+from .utilities import (import_questions, make_response, make_quiz_response, 
+    find_user, check_answers, get_index, send_export_categories, 
+    send_guide_options, score_answers)
 
 PAT = os.environ.get('PAT', None)
 verify_token = os.environ.get('VERIFY_TOKEN', None)
