@@ -277,9 +277,10 @@ def score_answers():
 	answered = []
 	with open(ans_path, "r") as answers:
 		line = answers.readlines()
+		logger.info(line)
 		answered.append(line)
 	print(answered)
-	for i in range(len(responses)):
+	for i in range(len(answered)):
 		pass
 
 def get_index():
