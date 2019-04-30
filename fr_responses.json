@@ -9,7 +9,7 @@
 		"payload": ["quiz", "guides", "categories"]
 	},
 	"continue" : {
-		"text": "Do you need any more help?",
+		"text": "Avez-vous besoin de plus d'aide?",
 		"options" : ["Faire le Quiz", "Guide de préparation", "Etapes d'exportation"],
 		"payload": ["quiz", "guides", "categories"]
 	}

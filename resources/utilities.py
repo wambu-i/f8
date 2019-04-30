@@ -27,10 +27,16 @@ assets = {
 	}
 }
 
-reviews = [
+en_reviews = [
 "Your company would seem to understand the commitment, strategies and resources needed to be a successful exporter. At the very least, you have a basis for beginning to export to the U.S.",
 "Your company has a serious interest in exporting, but there are some areas of weakness in your export strategy that you should address if you want your export strategy to succeed. Careful consideration should be given, particularly to those questions that you scored low on, before embarking on an ambitious export strategy.",
 "Your company is very weak in terms of preparing to export, and needs to do much more to ready itself for the U.S. market. There are considerable weaknesses, and if they are not addressed, it is highly unlikely that your export strategy will be successful."
+] 
+
+fr_reviews = [
+	"Votre entreprise semble comprendre l’engagement, stratégies et ressources nécessaires pour réussir à exporter. En tout cas, vous avez une base pour commencer à exporter aux États-Unis.",
+	"Votre entreprise a un intérêt sérieux à exporter, mais il existe quelques faiblesses dans votre stratégie d’exportation que vous devriez aborder si vous voulez que votre stratégie d'exportation réussisse. Une considération attentive devrait être donnée, en particulier aux questions que vous avez marqué faible avant de se lancer dans une stratégie d'exportation ambitieuse."
+	"Votre entreprise est très faible en termes de préparation à l’exportation et doit faire beaucoup plus pour se préparer au marché américain. Il y a faiblesses considérables, et si elles ne sont pas abordées, il est hautement peu probable que votre stratégie d'exportation soit couronnée de succès."
 ]
 
 headers = {
@@ -487,6 +493,7 @@ def check_answers(_id, token, idx, ans):
 def score_answers(_id, token):
 	final = 0
 	answered = []
+	language = get_language()
 	with open(ans_path, "r") as answers:
 		lines = answers.readlines()
 		answers.close()
@@ -498,14 +505,24 @@ def score_answers(_id, token):
 		final += int(score.strip('\n'))
 
 	message = "You scored {}".format(final)
+	
+	if language = "fr":
+		message = "Tu as marqué {} points".format(points)
+
 	rev = None
 
-	if final > 80:
+	if final > 18:
 		rev = reviews[0]
-	elif final > 47 and final < 80:
+		if language = "fr":
+			rev = fr_reviews[0]
+	elif final > 17 and final < 10:
 		rev = reviews[1]
+		if language = "fr":
+			rev = fr_reviews[1]
 	else:
 		rev = reviews[2]
+		if language = "fr":
+			rev = fr_reviews[2]
 
 	send_message_replies(_id, message, token)
 	send_message_replies(_id, rev, token)
