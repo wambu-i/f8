@@ -57,13 +57,14 @@ def worker_messaging():
                                     print("Creating quiz!")
                                     with open(answers, "r") as store:
                                         store.close()
-                                    make_quiz_response(sender_id, idx, PAT)
+                                    make_quiz_response(sender_id, 0, PAT)
                                     with open(answers, "r") as xx:
                                         lines = xx.readlines()
                                         print(lines)
 
                                 elif txt in letters:
                                     print("heres the choice ", txt)
+
 
                                     if get_index() is not None:
                                         idx = get_index()
@@ -72,9 +73,12 @@ def worker_messaging():
                                     with open(answers, "a") as store:
                                         print("Write to file %d", score)
                                         line = '{} {}\n'.format(txt, score)
+                                        print("writing to file", line)
                                         store.write(line)
                                         store.close()
                                     #print(answers)
+
+                                    idx = get_index()
                                     make_quiz_response(sender_id, idx, PAT)
 
 
