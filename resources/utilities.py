@@ -273,13 +273,13 @@ def check_answers(idx, ans):
 	return score
 
 def score_answers():
-	score = 0
+	final = 0
 	answered = []
 	with open(ans_path, "r") as answers:
 		lines = answers.readlines()
 		answers.close()
 		logger.info(lines)
-		
+
 	for i in range(len(lines)):
 		score = lines[i].split(" ")[1]
 		logger.info(score)
