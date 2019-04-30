@@ -3,7 +3,7 @@ import json
 import requests
 import os
 from . import bot
-from .utilities import (import_questions, make_response, make_quiz_response, find_user, check_answers, get_index)
+from .utilities import (import_questions, make_response, make_quiz_response, find_user, check_answers, get_index, send_carousel, send_postback_replies)
 
 PAT = os.environ.get('PAT', None)
 verify_token = os.environ.get('VERIFY_TOKEN', None)
@@ -76,9 +76,113 @@ def worker_messaging():
                                     #print(answers)
 
                                     make_quiz_response(sender_id, idx + 1 , PAT)
+                                elif txt == 'guides':
+                                    send_postback_replies(
+                                        sender_id,
+                                        "Here are a few steps to follow to get ready to export to the US",
+                                        [
+                                            {
+                                                "type": "web_url",
+                                                "url": "f8-2019.firebaseapp.com/guide",
+                                                "title": "Open the guide",
+                                                "webview_height_ratio": "tall",
+                                                "messenger_extensions": "false",
+                                                "fallback_url": "agoa.org"
+                                            }]
+                                        )
+                                elif txt == 'categories':
+                                    send_carousel(sender_id,
+                                                  [
+                                                      {
+                                                          "title": "Apparel Manufacturing",
+                                                          "image_url": "https://agoa.info/images/articles/5183/_thumb4/southafrica_textileworker.jpg",
+                                                        #   "subtitle": "We have the right hat for everyone.",
+                                                          "default_action": {
+                                                              "type": "web_url",
+                                                              "url": "f8-2019.firebaseapp.com/regulations/apparel",
+                                                              "webview_height_ratio": "tall",
+                                                          },
+                                                          "buttons": [
+                                                              {
+                                                                  "type": "web_url",
+                                                                  "url": "f8-2019.firebaseapp.com/regulations/apparel",
+                                                                  "title": "View regulations"
+                                                              }
+                                                          ]
+                                                      },
+                                                      {
+                                                          "title": "Cashews",
+                                                          "image_url": "https://agoa.info/images/articles/5183/_thumb4/southafrica_textileworker.jpg",
+                                                        #   "subtitle": "We have the right hat for everyone.",
+                                                          "default_action": {
+                                                              "type": "web_url",
+                                                              "url": "f8-2019.firebaseapp.com/regulations/cashew",
+                                                              "webview_height_ratio": "tall",
+                                                          },
+                                                          "buttons": [
+                                                              {
+                                                                  "type": "web_url",
+                                                                  "url": "f8-2019.firebaseapp.com/regulations/cashew",
+                                                                  "title": "View regulations"
+                                                              }
+                                                          ]
+                                                      },
+                                                      {
+                                                          "title": "Coffee",
+                                                          "image_url": "https://agoa.info/images/articles/5156/_thumb4/coffee_tasters_ethiopia600_400.jpg",
+                                                        #   "subtitle": "We have the right hat for everyone.",
+                                                          "default_action": {
+                                                              "type": "web_url",
+                                                              "url": "https://f8-2019.firebaseapp.com/regulations/coffee",
+                                                              "webview_height_ratio": "tall",
+                                                          },
+                                                          "buttons": [
+                                                              {
+                                                                  "type": "web_url",
+                                                                  "url": "https://f8-2019.firebaseapp.com/regulations/coffee",
+                                                                  "title": "View regulations"
+                                                              }
+                                                          ]
+                                                      },
+                                                      {
+                                                          "title": "Foodstuff",
+                                                          "image_url": "https://agoa.info/images/articles/6214/_thumb4/foodagoa.jpg",
+                                                        #   "subtitle": "We have the right hat for everyone.",
+                                                          "default_action": {
+                                                              "type": "web_url",
+                                                              "url": "https://f8-2019.firebaseapp.com/regulations/foodstuff",
+                                                              "webview_height_ratio": "tall",
+                                                          },
+                                                          "buttons": [
+                                                              {
+                                                                  "type": "web_url",
+                                                                  "url": "https://f8-2019.firebaseapp.com/regulations/foodstuff",
+                                                                  "title": "View regulations"
+                                                              }
+                                                          ]
+                                                      },
+                                                      {
+                                                          "title": "Textiles",
+                                                          "image_url": "https://agoa.info/images/articles/5159/_thumb4/ethiopia_trad_textiles_collage_small.jpg",
+                                                        #   "subtitle": "We have the right hat for everyone.",
+                                                          "default_action": {
+                                                              "type": "web_url",
+                                                              "url": "https://f8-2019.firebaseapp.com/regulations/textiles",
+                                                              "webview_height_ratio": "tall",
+                                                          },
+                                                          "buttons": [
+                                                              {
+                                                                  "type": "web_url",
+                                                                  "url": "https://f8-2019.firebaseapp.com/regulations/textiles",
+                                                                  "title": "View regulations"
+                                                              }
+                                                          ]
+                                                      },
+                                                  ]
+                                                  )
+
                             else:
                                 make_response(sender_id, 'quick', 'introduction', PAT)
-
 
     except Exception as e:
         raise e

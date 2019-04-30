@@ -79,7 +79,7 @@ def make_response(_id, t, k, token, **kwargs):
 			text = loaded.get('text', None)
 			api_request(_id, text, message, token)
 		else:
-			pass 
+			pass
 
 	except AttributeError:
 		logger.warning('Could not find handler for {}'.format(t))
@@ -142,7 +142,7 @@ def make_postback_replies(payload):
 
 		reply["buttons"] = []
 		reply["title"] = payload["choices"][i]
-		
+
 		print(reply)
 		replies.append(reply)
 
@@ -190,7 +190,29 @@ def send_quick_replies(_id, txt, msg, token):
 	else:
 		logger.error('{} :{}'.format(r.status_code, r.text))
 
-def send_postback_replies(_id, txt, msg, token):
+def send_carousel(id, payload):
+	data = json.dumps({
+"recipient":{
+    "id": id
+  },
+  "message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements": payload
+      }
+    }
+  }
+		})
+
+	r = requests.post(graph.format(token), headers = headers, data = data)
+	if r.status_code == 200:
+		logger.info("Successfully made postback responses request!")
+	else:
+		logger.error('{} :{}'.format(r.status_code, r.text))
+
+def send_postback_replies(_id, txt, buttons, token):
 	data = json.dumps({
 		"recipient":{
 			"id": _id
@@ -199,14 +221,9 @@ def send_postback_replies(_id, txt, msg, token):
 			"attachment":{
 				"type":"template",
 				"payload":{
-					"template_type":"generic",
-					"elements": [
-						{
-						"title": txt,
-						"subtitle": "Stuff to come",
-						"buttons": msg
-						}
-					]
+					"template_type":"button",
+					"text": txt,
+					"buttons": buttons
 				}
 			}
 			}
@@ -238,7 +255,7 @@ def find_user(id, token):
     nm = r.json()
     return nm['first_name']
 
- 
+
 def handle_quiz(idx):
 	logger.info(idx)
 	questions = import_questions()
